@@ -1,7 +1,9 @@
 #ifndef FRUITFULSOIL_H
 #define FRUITFULSOIL_H
 
-class FruitfulSoil : SoilState {
+#include "SoilState.h"
+
+class FruitfulSoil : public SoilState {
 };
 
 #endif

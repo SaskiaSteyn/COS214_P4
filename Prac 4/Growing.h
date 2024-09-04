@@ -1,7 +1,9 @@
 #ifndef GROWING_H
 #define GROWING_H
 
-class Growing : CropState {
+#include "CropState.h"
+
+class Growing : public CropState {
 };
 
 #endif

@@ -1,7 +1,9 @@
 #ifndef CROPSTATE_H
 #define CROPSTATE_H
 
-class CropState : State {
+#include "State.h"
+
+class CropState : public State {
 };
 
 #endif

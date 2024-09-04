@@ -1,7 +1,9 @@
 #ifndef SEEDLING_H
 #define SEEDLING_H
 
-class Seedling : CropState {
+#include "CropState.h"
+
+class Seedling : public CropState {
 };
 
 #endif

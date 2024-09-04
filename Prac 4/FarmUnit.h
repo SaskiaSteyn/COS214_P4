@@ -2,9 +2,10 @@
 #define FARMUNIT_H
 
 #include "State.h"
-#include "Truck"
+#include "Truck.h"
+#include "Farm.h"
 
-class FarmUnit : Farm {
+class FarmUnit : public Farm {
     private:
         State* soilState;
         State* cropState;

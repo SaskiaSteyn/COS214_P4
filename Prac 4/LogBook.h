@@ -3,6 +3,8 @@
 
 #include <list>
 
+using namespace std;
+
 #include "Memory.h"
 
 class LogBook {

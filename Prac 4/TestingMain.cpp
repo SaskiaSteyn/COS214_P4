@@ -1,3 +1,6 @@
-//
-// Created by Joshua Cilliers on 2024/09/04.
-//
+#include <iostream>
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}

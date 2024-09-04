@@ -1,9 +1,9 @@
 #ifndef BARN_H
 #define BARN_H
 
-#include "FarmUnit.h.h"
+#include "FarmUnit.h"
 
-class Barn : FarmUnit {
+class Barn : public FarmUnit {
     private:
         int totalCapacity;
         int currentCapacity;

@@ -1,7 +1,9 @@
 #ifndef FULLYGROWN_H
 #define FULLYGROWN_H
 
-class FullyGrown : CropState {
+#include "CropState.h"
+
+class FullyGrown : public CropState {
 };
 
 #endif
