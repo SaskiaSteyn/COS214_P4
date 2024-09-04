@@ -1,7 +1,9 @@
 #ifndef CROPFIELD_H
 #define CROPFIELD_H
 
-class CropField : FarmUnit {
+#include "FarmUnit.h"
+
+class CropField : public FarmUnit {
 };
 
 #endif

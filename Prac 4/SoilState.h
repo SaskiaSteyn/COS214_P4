@@ -1,7 +1,9 @@
 #ifndef SOILSTATE_H
 #define SOILSTATE_H
 
-class SoilState : State {
+#include "State.h"
+
+class SoilState : public State {
 };
 
 #endif
