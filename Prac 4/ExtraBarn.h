@@ -7,7 +7,9 @@
 class ExtraBarn {
     private:
         int extraCapacity;
-
+    public:
+        ExtraBarn();
+        ExtraBarn(int capacity);
 };
 
 
