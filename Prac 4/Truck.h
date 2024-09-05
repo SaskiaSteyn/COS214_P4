@@ -8,9 +8,12 @@ using namespace std;
 #include "FarmUnit.h"
 #include "Farm.h"
 
+class Farm;
+
 class Truck {
     public:
-        void truckOperation(Farm *unit);
+//        friend class Farm;
+        void truckOperation(Farm *farm);
 };
 
 #endif

@@ -2,6 +2,7 @@
 #define AGGREGATE_H
 
 #include <iostream>
+
 #include <map>
 #include <string>
 
@@ -11,10 +12,8 @@
 using namespace std;
 
 class Aggregate {
-    private:
-        Iterator * iterator;
     public:
-        Iterator * createIterator(map<string, Farm*> farms);
+        Iterator * createIterator(map<string, Farm *> farms);
 };
 
 #endif

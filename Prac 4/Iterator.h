@@ -9,16 +9,16 @@
 using namespace std;
 
 class Iterator {
-    private:
-        map<string, Farm*> farms;
-        Farm * current;
-    public:
-        Iterator(map<string, Farm*> farms);
-        Farm * getFarm(string farmName);
-        Farm * getStart();
-        Farm * getEnd();
-        Farm * getNext();
-        Farm * getPrevious();
+private:
+    map<string, Farm*> farms;
+    Farm * current;
+public:
+    Iterator(map<string, Farm*> farms);
+    Farm * getFarm(string farmName);
+    Farm * getStart();
+    Farm * getEnd();
+    Farm * getNext();
+    Farm * getPrevious();
 };
 
 #endif
