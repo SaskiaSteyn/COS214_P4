@@ -16,7 +16,7 @@ class Farmer {
         Farm* farm;
 
         //Strat/truck variable
-        Truck*
+        Truck* truck;
 
 
     public:

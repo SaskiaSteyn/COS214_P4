@@ -6,6 +6,8 @@
 #include "State.h"
 //#include "Truck.h"
 
+#include <vector>
+
 
 class FarmUnit : public Farm {
     private:
@@ -28,9 +30,13 @@ class FarmUnit : public Farm {
 
         //Composite methods
 
-        void addFarmUnit(Farm* farm);
-        void removeFarmUnit(Farm* farm);
+        bool addFarmUnit(Farm* farm);
+        bool removeFarmUnit(Farm* farm);
         Farm* getFarmUnit(int index);
+
+
+    protected:
+        vector<Farm*> farms;
 
 
 };
