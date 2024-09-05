@@ -2,17 +2,16 @@
 #define AGGREGATE_H
 
 #include <iostream>
-#include <string>
-#include <map>
 
-#include "Farm.h"
+#include <map>
+#include <string>
+
 #include "Iterator.h"
+#include "Farm.h"
 
 using namespace std;
 
 class Aggregate {
-    private:
-        map<string, Farm> farms;
     public:
         Iterator * createIterator(map<string, Farm *> farms);
 };
