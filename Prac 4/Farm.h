@@ -1,17 +1,20 @@
 #ifndef FARM_H
 #define FARM_H
 
-#include "FarmUnit.h"
 #include "Truck.h"
+
+#include <iostream>
+
+using namespace std;
 
 class Farm {
     private:
         Truck* truck;
 
     public:
-        void addFarmUnit(FarmUnit farm);
-        void removeFarmUnit(FarmUnit farm);
-        FarmUnit* getFarmUnit(int index);
+        virtual void addFarmUnit(Farm* farm) = 0;
+        virtual void removeFarmUnit(Farm* farm) = 0;
+        virtual Farm* getFarmUnit(int index) = 0;
 
 
 };
