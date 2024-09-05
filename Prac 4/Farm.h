@@ -12,9 +12,9 @@ class Farm {
         Truck* truck;
 
     public:
-        virtual void addFarmUnit(Farm* farm) = 0;
-        virtual void removeFarmUnit(Farm* farm) = 0;
-        virtual Farm* getFarmUnit(int index) = 0;
+        virtual bool addFarmUnit(Farm* farm) = 0;
+        virtual bool removeFarmUnit(Farm* farm) = 0;
+        virtual Farm* getFarmUnit(int index);
 
 
 };

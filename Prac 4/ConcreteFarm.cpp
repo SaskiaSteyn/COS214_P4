@@ -4,17 +4,28 @@ ConcreteFarm::ConcreteFarm() {
 
 }
 
-void ConcreteFarm::addFarmUnit(Farm* farm) {
-    Farm* newFarm = farm;
-    cout << "A new farm has been added" << endl;
+bool ConcreteFarm::addFarmUnit(Farm* farm) {
+    this->farms.push_back(farm);
+    return true;
 }
 
-void ConcreteFarm::removeFarmUnit(Farm* farm) {
+bool ConcreteFarm::removeFarmUnit(Farm* farm) {
+    for (int i = 0; i < this->farms.size(); i++) {
 
+        if (this->farms[i] == farm) {
+
+            this->farms.erase(this->farms.begin() + i);
+            return true;
+
+        }
+
+    }
+
+    return false;
 }
 
 Farm *ConcreteFarm::getFarmUnit(int index) {
-    return nullptr;
+    return nullptr; //TODO: implement this function
 }
 
 

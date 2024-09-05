@@ -2,13 +2,17 @@
 #define CONCRETEFARM_H
 
 #include "Farm.h"
+#include <vector>
 
 class ConcreteFarm : public Farm {
 
     ConcreteFarm();
-    void addFarmUnit(Farm* farm);
-    void removeFarmUnit(Farm* farm);
+    bool addFarmUnit(Farm* farm);
+    bool removeFarmUnit(Farm* farm);
     Farm* getFarmUnit(int index);
+
+    protected:
+        vector<Farm*> farms;
 };
 
 #endif
