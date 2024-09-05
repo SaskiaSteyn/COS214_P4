@@ -2,6 +2,7 @@
 #define FARM_H
 
 #include "FarmUnit.h"
+#include "Truck.h"
 
 class Farm {
     private:
