@@ -24,6 +24,6 @@ bool FarmUnit::removeFarmUnit(Farm *farm) {
 }
 
 Farm *FarmUnit::getFarmUnit(int index) {
-    return Farm::getFarmUnit(index); //TODO: implement this function
+    return this->farms.at(index);
 }
 

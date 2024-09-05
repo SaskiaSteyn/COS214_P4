@@ -14,7 +14,7 @@ class Farm {
     public:
         virtual bool addFarmUnit(Farm* farm) = 0;
         virtual bool removeFarmUnit(Farm* farm) = 0;
-        virtual Farm* getFarmUnit(int index);
+        virtual Farm* getFarmUnit(int index) = 0;
 
 
 };

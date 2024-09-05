@@ -25,7 +25,7 @@ bool ConcreteFarm::removeFarmUnit(Farm* farm) {
 }
 
 Farm *ConcreteFarm::getFarmUnit(int index) {
-    return nullptr; //TODO: implement this function
+    return this->farms.at(index);
 }
 
 
