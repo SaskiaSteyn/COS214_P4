@@ -5,7 +5,7 @@
 #include "Farmer.h"
 #include "ConcreteFarm.h"
 #include "State.h"
-#include "Truck.h"
+//#include "Truck.h"
 
 #include <vector>
 
