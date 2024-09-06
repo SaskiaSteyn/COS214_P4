@@ -1,7 +1,7 @@
 #ifndef LOGBOOK_H
 #define LOGBOOK_H
 
-#include <list>
+#include <vector>
 
 using namespace std;
 
@@ -9,13 +9,13 @@ using namespace std;
 
 class LogBook {
     private:
-        list <Memory*> logbook;
+        vector <Memory*> logbook;
 
 
     public:
         Memory* getMemories(int index);
-        Memory* setMemories(int index, Memory* memories);
-        Memory* addMemories(Memory* memory);
+        void setMemory(int index, Memory* memories);
+        void addMemories(Memory* memory);
 };
 
 #endif

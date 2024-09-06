@@ -9,10 +9,10 @@
 
 class Farmer {
     private:
-        //Mento/memory variables
-        //When the states get updated by farmunit, the previous/older value gets sent to memory
-        CropField* soilState;
-        CropField* cropState;
+        //Mentos/memory variables
+        //When the states get updated by farmUnit, the previous/older value gets sent to memory
+        State* soilState;
+        State* cropState;
 
         //Composite variables
         Farm* farm;
@@ -23,10 +23,12 @@ class Farmer {
 
     public:
         //Mentos/memory methods
-        Memory* createMemory();
+        Memory* createMemorySoil();
+        Memory* createMemoryCrop();
 
         //State methods
-        void setStates();
+        void setStateSoil(State* oldSoilState);
+        void setStateCrop(State* oldCropState);
         void updateFarmState(Farm* farm);
 
 };

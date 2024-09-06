@@ -2,6 +2,7 @@
 #define FARMUNIT_H
 
 #include "Farm.h"
+#include "Farmer.h"
 #include "ConcreteFarm.h"
 #include "State.h"
 //#include "Truck.h"
@@ -17,11 +18,12 @@ class FarmUnit : public Farm {
 
     public:
         //Memory method
-        void notifyFarmer();
+        void notifyFarmerSoil(State* oldStateSoil);
+        void notifyFarmerCrop(State* oldStateCrop);
 
         //State method
-        void setStateSoil();
-        void setStateCrop();
+        void setStateSoil(State* newSoilState);
+        void setStateCrop(State* newCropState);
 
         //Start/truck class
         virtual void buyTruck(Truck* truck) = 0;
@@ -38,6 +40,7 @@ class FarmUnit : public Farm {
 
     protected:
         vector<Farm*> farms;
+        Farmer* farmer;
 
 
 };
