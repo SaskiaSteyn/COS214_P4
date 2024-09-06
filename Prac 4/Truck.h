@@ -1,13 +1,19 @@
-#ifndef CLASS2_H
-#define CLASS2_H
+#ifndef TRUCK_H
+#define TRUCK_H
 
+#include <iostream>
 
+using namespace std;
+
+#include "FarmUnit.h"
+#include "Farm.h"
+
+class Farm;
 
 class Truck {
     public:
-        void truckOperation();
-
-
+//        friend class Farm;
+        void truckOperation(Farm *farm);
 };
 
 #endif
