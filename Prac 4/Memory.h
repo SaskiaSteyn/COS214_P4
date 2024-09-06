@@ -6,11 +6,12 @@
 
 class Memory {
     public:
+    //once a memory is made, it gets stored in logbook
         Memory* saveMemory();
         Memory* restoreMemory(Memory backedUpData);
 
     private:
-        Farmer* farmer;
+        Farm* farmer;
 };
 
 #endif

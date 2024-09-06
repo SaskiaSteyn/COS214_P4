@@ -1,7 +1,9 @@
 #ifndef DELIVERYTRUCK_H
 #define DELIVERYTRUCK_H
 
-class DeliveryTruck : Farmer {
+#include "Farmer.h"
+
+class DeliveryTruck : public Farmer {
 };
 
 #endif

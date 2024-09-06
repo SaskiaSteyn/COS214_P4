@@ -1,7 +1,9 @@
 #ifndef FLOODEDSOIL_H
 #define FLOODEDSOIL_H
 
-class FloodedSoil : SoilState {
+#include "SoilState.h"
+
+class FloodedSoil : public SoilState {
 };
 
 #endif
