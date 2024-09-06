@@ -11,6 +11,7 @@
 
 class FarmUnit : public Farm {
     private:
+    //memento: these states get sent to farmer
         State* soilState;
         State* cropState;
 

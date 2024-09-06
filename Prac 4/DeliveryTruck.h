@@ -3,7 +3,7 @@
 
 #include "Farmer.h"
 
-class DeliveryTruck : Farmer {
+class DeliveryTruck : public Farmer {
 };
 
 #endif

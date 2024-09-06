@@ -5,12 +5,14 @@
 #include "Farm.h"
 #include "Truck.h"
 #include "Memory.h"
+#include "CropField.h"
 
 class Farmer {
     private:
         //Mento/memory variables
-        State* soilState;
-        State* cropState;
+        //When the states get updated by farmunit, the previous/older value gets sent to memory
+        CropField* soilState;
+        CropField* cropState;
 
         //Composite variables
         Farm* farm;
