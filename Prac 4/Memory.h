@@ -1,17 +1,16 @@
 #ifndef MEMORY_H
 #define MEMORY_H
 
-#include "Farm.h"
-#include "Farmer.h"
+#include "State.h"
 
 class Memory {
+    private:
+       State* farmState;
+
     public:
     //once a memory is made, it gets stored in logbook
-        Memory* saveMemory();
-        Memory* restoreMemory(Memory backedUpData);
-
-    private:
-        Farm* farmer;
+        void saveMemory(State* farmState);
+        State* restoreMemory();
 };
 
 #endif

@@ -1,5 +1,30 @@
 #include "FarmUnit.h"
 
+//Memento functions
+void FarmUnit::notifyFarmerSoil(State* oldStateSoil) {
+    farmer->setStateSoil(oldStateSoil);
+
+}
+
+void FarmUnit::notifyFarmerCrop(State* oldStateCrop) {
+    farmer->setStateCrop(oldStateCrop);
+
+}
+
+
+//Memento setting state methods
+void FarmUnit::setStateSoil(State* newSoilState) {
+    notifyFarmerSoil(soilState);
+    this->soilState = newSoilState;
+
+}
+
+void FarmUnit::setStateCrop(State* newCropState) {
+    notifyFarmerCrop(cropState);
+    this->cropState = newCropState;
+
+
+}
 
 
 //Composite methods
