@@ -17,7 +17,7 @@ class DrySoil : public SoilState {
         void notify();
         string getName();
 
-        void harvestCrops(int yield);
+        void harvestCrops(int yield, CropField* context);
         void rain(CropField* context);
     };
 

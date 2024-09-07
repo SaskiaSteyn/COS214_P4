@@ -12,7 +12,7 @@ void FarmUnit::notifyFarmerCrop(State* oldStateCrop) {
 }
 
 
-//Memento setting state methods
+//State setting state methods
 void FarmUnit::setStateSoil(State* newSoilState) {
     notifyFarmerSoil(soilState);
     this->soilState = newSoilState;
@@ -22,7 +22,6 @@ void FarmUnit::setStateSoil(State* newSoilState) {
 void FarmUnit::setStateCrop(State* newCropState) {
     notifyFarmerCrop(cropState);
     this->cropState = newCropState;
-
 
 }
 
