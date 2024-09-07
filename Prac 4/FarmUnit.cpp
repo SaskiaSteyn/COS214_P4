@@ -17,11 +17,15 @@ void FarmUnit::setStateSoil(State* newSoilState) {
     notifyFarmerSoil(soilState);
     this->soilState = newSoilState;
 
+    this->farmer->updateFarmState();
+
 }
 
 void FarmUnit::setStateCrop(State* newCropState) {
     notifyFarmerCrop(cropState);
     this->cropState = newCropState;
+
+    this->farmer->updateFarmState();
 
 }
 
@@ -49,5 +53,13 @@ bool FarmUnit::removeFarmUnit(Farm *farm) {
 
 Farm *FarmUnit::getFarmUnit(int index) {
     return this->farms.at(index);
+}
+
+State *FarmUnit::getSoilState() {
+    return this->soilState;
+}
+
+State *FarmUnit::getCropState() {
+    return this->cropState;
 }
 

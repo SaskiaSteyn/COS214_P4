@@ -6,6 +6,8 @@
 #include "State.h"
 #include "Truck.h"
 
+class Farmer;
+
 #include <vector>
 
 
@@ -31,10 +33,13 @@ class FarmUnit : public Farm {
         virtual void startEngine() = 0;
 
         //Composite methods
-
         bool addFarmUnit(Farm* farm);
         bool removeFarmUnit(Farm* farm);
         Farm* getFarmUnit(int index);
+
+        //observer methods
+        State* getSoilState();
+        State* getCropState();
 
 
     protected:

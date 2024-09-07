@@ -5,6 +5,9 @@
 #include "Farm.h"
 #include "Truck.h"
 #include "Memory.h"
+#include "FarmUnit.h"
+
+class FarmUnit;
 
 class Farmer {
     private:
@@ -15,6 +18,9 @@ class Farmer {
 
         //Composite variables
         Farm* farm;
+
+        //Observer variable
+        FarmUnit* farmUnit;
 
         //Strat/truck variable
         Truck* truck;
@@ -28,7 +34,11 @@ class Farmer {
         //State methods
         void setStateSoil(State* oldSoilState);
         void setStateCrop(State* oldCropState);
-        void updateFarmState(Farm* farm);
+
+
+        //Observer methods
+        void updateFarmState();
+
 
 };
 

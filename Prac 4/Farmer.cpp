@@ -25,7 +25,8 @@ void Farmer::setStateCrop(State *oldCropState) {
 
 }
 
-void Farmer::updateFarmState(Farm *farm) {
-
+void Farmer::updateFarmState() {
+    this->soilState = this->farmUnit->getSoilState();
+    this->cropState = this->farmUnit->getCropState();
 }
 
