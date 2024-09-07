@@ -5,7 +5,6 @@
 #include "Farm.h"
 #include "Truck.h"
 #include "Memory.h"
-#include "CropField.h"
 
 class Farmer {
     private:
