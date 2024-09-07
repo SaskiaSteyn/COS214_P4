@@ -1,9 +1,10 @@
 #ifndef FERTILIZERTRUCK_H
 #define FERTILIZERTRUCK_H
 
-#include "Farmer.h"
 
-class FertilizerTruck : public Farmer {
+#include "Truck.h"
+
+class FertilizerTruck : public Truck {
 };
 
 #endif
