@@ -14,7 +14,6 @@ class FruitfulSoil : public SoilState {
         int productionMultiplier = 3;
 
     public:
-        void notify();
         string getName();
 
         void harvestCrops(int yield, CropField* context);

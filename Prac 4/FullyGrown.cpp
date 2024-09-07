@@ -1,9 +1,5 @@
 #include "FullyGrown.h"
 
-void FullyGrown::notify() {
-
-}
-
 string FullyGrown::getName() {
     return this->name;
 }

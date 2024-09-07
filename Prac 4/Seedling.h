@@ -11,7 +11,6 @@ class Seedling : public CropState {
         string name = "Seedling";
 
     public:
-        void notify();
         string getName();
 
         bool isReadyForHarvest();

@@ -13,7 +13,6 @@ class MoistSoil : public SoilState {
         int productionMultiplier = 2;
 
     public:
-        void notify();
         string getName();
 
         void harvestCrops(int yield, CropField* context);

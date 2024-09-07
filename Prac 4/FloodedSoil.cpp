@@ -1,8 +1,5 @@
 #include "FloodedSoil.h"
 
-void FloodedSoil::notify() {
-
-}
 
 string FloodedSoil::getName() {
     return this->name;

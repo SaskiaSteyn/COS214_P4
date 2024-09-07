@@ -1,9 +1,5 @@
 #include "MoistSoil.h"
 
-void MoistSoil::notify() {
-
-}
-
 string MoistSoil::getName() {
     return this->name;
 }

@@ -1,9 +1,5 @@
 #include "Growing.h"
 
-void Growing::notify() {
-
-}
-
 string Growing::getName() {
     return this->name;
 }

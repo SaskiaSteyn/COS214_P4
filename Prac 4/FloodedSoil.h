@@ -10,7 +10,6 @@ class FloodedSoil : public SoilState {
         int productionMultiplier = 0;
 
     public:
-        void notify();
         string getName();
 
         void harvestCrops(int yield, CropField* context);
