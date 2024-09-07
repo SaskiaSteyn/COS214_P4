@@ -2,6 +2,9 @@
 #define CROPSTATE_H
 
 #include "State.h"
+#include "CropField.h"
+
+class CropField;
 
 class CropState : public State {
     public:

@@ -16,5 +16,5 @@ bool Growing:: isReadyForHarvest() {
 
 void Growing::growCrops(CropField *context) {
     cout << "Your growing crops are almost ready!" << endl;
-    context->setSoilState(new FullyGrown());
+    context->setCropState(new FullyGrown());
 }

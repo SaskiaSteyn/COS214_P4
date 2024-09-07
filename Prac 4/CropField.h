@@ -5,6 +5,9 @@
 #include "SoilState.h"
 #include "CropState.h"
 
+class SoilState;
+class CropState;
+
 class CropField : public FarmUnit{
     private:
         SoilState* soilState;
