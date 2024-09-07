@@ -8,7 +8,6 @@ class CropField;
 
 class CropState : public State {
     public:
-        virtual void notify() = 0;
         virtual string getName() = 0;
 
         virtual bool isReadyForHarvest() = 0;

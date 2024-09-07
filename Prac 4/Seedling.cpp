@@ -1,9 +1,4 @@
-
 #include "Seedling.h"
-
-void Seedling::notify() {
-
-}
 
 string Seedling::getName() {
     return this->name;

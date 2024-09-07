@@ -14,7 +14,6 @@ class DrySoil : public SoilState {
     int productionMultiplier = 1;
 
     public:
-        void notify();
         string getName();
 
         void harvestCrops(int yield, CropField* context);

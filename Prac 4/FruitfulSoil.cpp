@@ -1,9 +1,5 @@
 #include "FruitfulSoil.h"
 
-void FruitfulSoil::notify() {
-
-}
-
 string FruitfulSoil::getName() {
     return this->name;
 }

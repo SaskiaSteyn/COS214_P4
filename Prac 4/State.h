@@ -11,7 +11,6 @@ class State {
         int stateName;
 
     public:
-        virtual void notify() = 0;
         virtual string getName() = 0;
 };
 

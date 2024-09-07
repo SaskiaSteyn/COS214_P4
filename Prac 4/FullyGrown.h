@@ -10,7 +10,6 @@ class FullyGrown : public CropState {
         string name = "FullyGrown";
 
     public:
-        void notify();
         string getName();
 
         bool isReadyForHarvest();

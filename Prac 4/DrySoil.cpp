@@ -1,9 +1,5 @@
-
 #include "DrySoil.h"
 
-void DrySoil::notify() {
-
-}
 
 string DrySoil::getName() {
     return this->name;

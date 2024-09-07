@@ -9,7 +9,6 @@ class CropField;
 class SoilState : public State {
 
     public:
-        virtual void notify() = 0;
         virtual string getName() = 0;
 
         virtual void harvestCrops(int yield, CropField* context) = 0;
