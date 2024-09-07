@@ -12,7 +12,7 @@ class SoilState : public State {
         virtual void notify() = 0;
         virtual string getName() = 0;
 
-        virtual void harvestCrops() = 0;
+        virtual void harvestCrops(int yield, CropField* context) = 0;
         virtual void rain(CropField* context) = 0;
 };
 

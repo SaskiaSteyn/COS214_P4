@@ -11,12 +11,15 @@ class CropField : public FarmUnit{
         CropState* cropState;
         int yield; //the amount that has been planted
 
+
     public:
         virtual void harvestCrops() = 0;
         void summonRain();
 
         void setSoilState(SoilState* soilState);
         void setCropState(CropState* cropState);
+
+        bool getCropStatus();
 };
 
 #endif

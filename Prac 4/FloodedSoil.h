@@ -6,13 +6,14 @@
 
 class FloodedSoil : public SoilState {
     private:
-        string name = "FruitfulSoil";
+        string name = "FloodedSoil";
+        int productionMultiplier = 0;
 
     public:
         void notify();
         string getName();
 
-        void harvestCrops();
+        void harvestCrops(int yield, CropField* context);
         void rain(CropField* context);
 };
 

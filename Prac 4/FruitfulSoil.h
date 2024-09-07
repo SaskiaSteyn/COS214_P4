@@ -5,16 +5,19 @@
 #include "CropField.h"
 #include "FloodedSoil.h"
 
+class FloodedSoil;
+
 class FruitfulSoil : public SoilState {
 
     private:
         string name = "FruitfulSoil";
+        int productionMultiplier = 3;
 
     public:
         void notify();
         string getName();
 
-        void harvestCrops();
+        void harvestCrops(int yield, CropField* context);
         void rain(CropField* context);
 
 };
