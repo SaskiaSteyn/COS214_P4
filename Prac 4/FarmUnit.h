@@ -4,8 +4,9 @@
 #include "Farm.h"
 #include "Farmer.h"
 #include "State.h"
-#include "Truck.h"
+//#include "Truck.h"
 
+class Truck;
 class Farmer;
 
 #include <vector>
@@ -27,6 +28,7 @@ class FarmUnit : public Farm {
         void setStateCrop(State* newCropState);
 
         //Start/truck class
+        friend class Truck;
         virtual void buyTruck(Truck* truck) = 0;
         virtual void sellTruck() = 0;
         virtual void callTruck() = 0;

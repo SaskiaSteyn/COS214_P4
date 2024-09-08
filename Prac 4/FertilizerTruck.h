@@ -3,8 +3,12 @@
 
 
 #include "Truck.h"
+#include "FruitfulSoil.h"
+#include "FarmUnit.h"
+//#include "State.h"
 
 class FertilizerTruck : public Truck {
+    void startEngine(FarmUnit *farm);
 };
 
 #endif

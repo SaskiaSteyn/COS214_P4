@@ -5,12 +5,13 @@
 
 using namespace std;
 
+class FarmUnit;
 
 class Truck {
     public:
-//        friend class Farm;
+        friend class FarmUnit;
         //startEngine would likely need a cropField here as param, BUT introducing that creates a circular dependency
-        virtual void startEngine() = 0;
+        virtual void startEngine(FarmUnit *farm) = 0;
 };
 
 #endif
