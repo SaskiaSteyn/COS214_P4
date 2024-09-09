@@ -17,6 +17,8 @@ class MoistSoil : public SoilState {
 
         void harvestCrops(int yield, CropField* context);
         void rain(CropField* context);
+
+        bool isReadyForHarvest() {return false;};
 };
 
 #endif

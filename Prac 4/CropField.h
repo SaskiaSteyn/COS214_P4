@@ -5,24 +5,38 @@
 #include "SoilState.h"
 #include "CropState.h"
 
+#include "Seedling.h"
+#include "Growing.h"
+#include "FullyGrown.h"
+
+#include "DrySoil.h"
+#include "FruitfulSoil.h"
+#include "FruitfulSoil.h"
+#include "FloodedSoil.h"
+
 class SoilState;
 class CropState;
 
 class CropField : public FarmUnit{
     private:
-        SoilState* soilState;
-        CropState* cropState;
+        State* soilState;
+        State* cropState;
         int yield; //the amount that has been planted
 
 
     public:
-        virtual void harvestCrops() = 0;
+        CropField();
         void summonRain();
 
-        void setSoilState(SoilState* soilState);
-        void setCropState(CropState* cropState);
+        void setSoilState(State* soilState);
+        void setCropState(State* cropState);
 
         bool getCropStatus();
+
+        void buyTruck(Truck* truck) {};
+        void sellTruck() {};
+        void callTruck() {};
+        void startEngine() {};
 };
 
 #endif

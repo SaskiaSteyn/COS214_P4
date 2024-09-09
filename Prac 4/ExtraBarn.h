@@ -1,7 +1,9 @@
 #ifndef PRAC_4_EXTRABARN_H
 #define PRAC_4_EXTRABARN_H
 
-class ExtraBarn {
+#include "Farm.h"
+
+class ExtraBarn: public Farm {
     private:
         int extraCapacity;
     public:

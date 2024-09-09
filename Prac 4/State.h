@@ -12,6 +12,7 @@ class State {
 
     public:
         virtual string getName() = 0;
+        virtual bool isReadyForHarvest() = 0;
 };
 
 #endif

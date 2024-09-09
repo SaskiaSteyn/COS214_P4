@@ -2,6 +2,7 @@
 #define FARM_H
 
 #include "Truck.h"
+#include "State.h"
 
 #include <iostream>
 
@@ -20,6 +21,8 @@ class Farm {
         string getName();
         void setName(string farmName);
 
+        virtual State* getSoilState() = 0;
+        virtual State* getCropState() = 0;
 
 };
 

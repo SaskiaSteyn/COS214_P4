@@ -47,3 +47,7 @@ Farm *Iterator::getPrevious() {
 
     return current;
 }
+
+Farm * Iterator::getCurrent() const {
+    return current;
+}
