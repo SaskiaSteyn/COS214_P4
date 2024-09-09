@@ -15,6 +15,7 @@ private:
 public:
     Iterator(map<string, Farm*> farms);
     Farm * getFarm(string farmName);
+    Farm * getCurrent();
     Farm * getStart();
     Farm * getEnd();
     Farm * getNext();

@@ -17,6 +17,14 @@ void CropField::setCropState(CropState *cropState) {
 
 }
 
+State * CropField::getSoilState() {
+    return soilState;
+}
+
+State * CropField::getCropState() {
+    return cropState;
+}
+
 bool CropField::getCropStatus() {
     return this->cropState->isReadyForHarvest();
 }

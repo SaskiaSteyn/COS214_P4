@@ -35,17 +35,17 @@ class FarmUnit : public Farm {
         virtual void startEngine() = 0;
 
         //Composite methods
-        bool addFarmUnit(Farm* farm);
-        bool removeFarmUnit(Farm* farm);
-        Farm* getFarmUnit(int index);
+        bool addFarmUnit(FarmUnit* farm) {return false;};
+        bool removeFarmUnit(FarmUnit* farm) {return false;};
+        FarmUnit* getFarmUnit(int index) {return nullptr;};
 
         //observer methods
-        State* getSoilState();
-        State* getCropState();
+        virtual State* getSoilState() = 0;
+        virtual State* getCropState() = 0;
 
 
     protected:
-        vector<Farm*> farms;
+        // vector<Farm*> farms;
         Farmer* farmer;
 
 

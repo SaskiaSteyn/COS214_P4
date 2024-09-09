@@ -13,14 +13,12 @@ class Farm {
         string name;
 
     public:
-        virtual bool addFarmUnit(Farm* farm) = 0;
-        virtual bool removeFarmUnit(Farm* farm) = 0;
-        virtual Farm* getFarmUnit(int index) = 0;
+        virtual bool addFarmUnit(FarmUnit* farm) = 0;
+        virtual bool removeFarmUnit(FarmUnit* farm) = 0;
+        virtual FarmUnit* getFarmUnit(int index) = 0;
 
         string getName();
         void setName(string farmName);
-
-
 };
 
 #endif
