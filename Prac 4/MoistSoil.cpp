@@ -21,4 +21,6 @@ void MoistSoil::rain(CropField *context) {
 
 }
 
-
+int MoistSoil::getProductionMultiplier() {
+    return this->productionMultiplier;
+}

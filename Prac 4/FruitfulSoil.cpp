@@ -21,3 +21,7 @@ void FruitfulSoil::rain(CropField *context) {
     context->setSoilState(new FloodedSoil());
 
 }
+
+int FruitfulSoil::getProductionMultiplier() {
+    return this->productionMultiplier;
+}

@@ -2,7 +2,7 @@
 #define SOILSTATE_H
 
 #include "State.h"
-#include "CropField.h"
+//#include "CropField.h"
 
 class CropField;
 
@@ -13,6 +13,11 @@ class SoilState : public State {
 
         virtual void harvestCrops(int yield, CropField* context) = 0;
         virtual void rain(CropField* context) = 0;
+
+        bool isReadyForHarvest() {return false;};
+        void growCrops(CropField* context) {};
+
+        virtual int getProductionMultiplier() = 0;
 };
 
 #endif

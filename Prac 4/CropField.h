@@ -16,13 +16,27 @@ class CropField : public FarmUnit{
 
 
     public:
-        virtual void harvestCrops() = 0;
+        // virtual void harvestCrops() = 0;
         void summonRain();
 
         void setSoilState(SoilState* soilState);
         void setCropState(CropState* cropState);
+        SoilState* getSoilState();
+        CropState* getCropState();
 
         bool getCropStatus();
+
+
+        void buyTruck(Truck* truck) {};
+        void sellTruck() {};
+        void callTruck() {};
+        void startEngine() {};
+
+        int getCurrentCapacity() {return -1;};
+        void increaseCapacity(int amount) {};
+        void decreaseCapacity(int amount) {};
+        void setCapacity(int amount) {};
+        int getThreshhold() {return -1;};
 };
 
 #endif

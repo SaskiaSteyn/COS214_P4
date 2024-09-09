@@ -6,34 +6,41 @@
 #include "Truck.h"
 #include "Memory.h"
 #include "FarmUnit.h"
+#include "ConcreteFarm.h"
 
-class FarmUnit;
+class ConcreteFarm;
+//class FarmUnit;
 
 class Farmer {
     private:
         //Mentos/memory variables
         //When the states get updated by farmUnit, the previous/older value gets sent to memory
-        State* soilState;
-        State* cropState;
+        SoilState* soilState;
+        CropState* cropState;
 
         //Composite variables
-        Farm* farm;
+//        Farm* farm;
 
         //Observer variable
-        FarmUnit* farmUnit;
+        ConcreteFarm *concreteFarm;
+//        FarmUnit* farmUnit;
+//        FarmUnit* barn;
 
-        //Strat/truck variable
-        Truck* truck;
+
 
 
     public:
+//        friend class ConcreteFarm;
+        Farmer(ConcreteFarm *concreteFarm);
+
         //Mentos/memory methods
         Memory* createMemorySoil();
         Memory* createMemoryCrop();
 
         //State methods
-        void setStateSoil(State* oldSoilState);
-        void setStateCrop(State* oldCropState);
+        void setStateSoil(SoilState* oldSoilState);
+        void setStateCrop(CropState* oldCropState);
+        void increaseCapacity(int amount);
 
 
         //Observer methods

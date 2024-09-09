@@ -2,8 +2,9 @@
 #define FARMUNIT_H
 
 #include "Farm.h"
-#include "Farmer.h"
 #include "State.h"
+#include "SoilState.h"
+#include "CropState.h"
 //#include "Truck.h"
 
 class Truck;
@@ -15,40 +16,30 @@ class Farmer;
 class FarmUnit : public Farm {
     private:
     //memento: these states get sent to farmer
-        State* soilState;
-        State* cropState;
+        SoilState* soilState;
+        CropState* cropState;
 
     public:
-        //Memory method
-        void notifyFarmerSoil(State* oldStateSoil);
-        void notifyFarmerCrop(State* oldStateCrop);
+        FarmUnit();
 
         //State method
-        void setStateSoil(State* newSoilState);
-        void setStateCrop(State* newCropState);
-
-        //Start/truck class
-        friend class Truck;
-        virtual void buyTruck(Truck* truck) = 0;
-        virtual void sellTruck() = 0;
-        virtual void callTruck() = 0;
-        virtual void startEngine() = 0;
+        virtual void setSoilState(SoilState* newSoilState) = 0;
+        virtual void setCropState(CropState* newCropState) = 0;
 
         //Composite methods
-        bool addFarmUnit(Farm* farm);
-        bool removeFarmUnit(Farm* farm);
-        Farm* getFarmUnit(int index);
+        bool addFarmUnit(FarmUnit* farm) {return false;};
+        bool removeFarmUnit(FarmUnit* farm) {return false;};
+        FarmUnit* getFarmUnit(int index) {return nullptr;};
 
         //observer methods
-        State* getSoilState();
-        State* getCropState();
+        virtual SoilState* getSoilState() = 0;
+        virtual CropState* getCropState() = 0;
 
-
-    protected:
-        vector<Farm*> farms;
-        Farmer* farmer;
-
-
+        virtual int getCurrentCapacity() = 0;
+        virtual void increaseCapacity(int amount) = 0;
+        virtual void decreaseCapacity(int amount) = 0;
+        virtual void setCapacity(int amount) = 0;
+        virtual int getThreshhold() = 0;
 };
 
 #endif

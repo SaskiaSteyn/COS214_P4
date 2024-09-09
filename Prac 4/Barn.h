@@ -11,9 +11,17 @@ class Barn : public FarmUnit {
         int threshold;
     public:
         friend class DeliveryTruck;
+        Barn();
         int getCurrentCapacity();
         void increaseCapacity(int amount);
         void decreaseCapacity(int amount);
+        void setCapacity(int amount);
+        int getThreshhold();
+
+    void setSoilState(State* soilState) {};
+    void setCropState(State* cropState) {};
+    SoilState* getSoilState() {return nullptr;};
+    CropState* getCropState() {return nullptr;};
 };
 
 #endif
