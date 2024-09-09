@@ -2,7 +2,6 @@
 #define FARMUNIT_H
 
 #include "Farm.h"
-#include "Farmer.h"
 #include "State.h"
 //#include "Truck.h"
 
@@ -19,6 +18,8 @@ class FarmUnit : public Farm {
         State* cropState;
 
     public:
+        FarmUnit();
+
         //Memory method
         void notifyFarmerSoil(State* oldStateSoil);
         void notifyFarmerCrop(State* oldStateCrop);
@@ -26,13 +27,6 @@ class FarmUnit : public Farm {
         //State method
         void setStateSoil(State* newSoilState);
         void setStateCrop(State* newCropState);
-
-        //Start/truck class
-        friend class Truck;
-        virtual void buyTruck(Truck* truck) = 0;
-        virtual void sellTruck() = 0;
-        virtual void callTruck() = 0;
-        virtual void startEngine() = 0;
 
         //Composite methods
         bool addFarmUnit(FarmUnit* farm) {return false;};
@@ -42,12 +36,6 @@ class FarmUnit : public Farm {
         //observer methods
         virtual State* getSoilState() = 0;
         virtual State* getCropState() = 0;
-
-
-    protected:
-        // vector<Farm*> farms;
-        Farmer* farmer;
-
 
 };
 

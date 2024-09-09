@@ -1,6 +1,10 @@
 
 #include "Farmer.h"
 
+Farmer::Farmer(FarmUnit *farm) {
+    this->farmUnit = farm;
+}
+
 Memory *Farmer::createMemorySoil() {
     Memory* newMemory = new Memory();
     newMemory->saveMemory(this->soilState);

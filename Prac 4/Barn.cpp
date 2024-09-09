@@ -1,5 +1,11 @@
 #include "Barn.h"
 
+Barn::Barn() {
+    this->totalCapacity = 100;
+    this->currentCapacity = 0;
+    this->threshold = 50;
+}
+
 int Barn::getCurrentCapacity() {
     return this->currentCapacity;
 }

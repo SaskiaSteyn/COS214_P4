@@ -28,4 +28,18 @@ FarmUnit *ConcreteFarm::getFarmUnit(int index) {
     return this->farms.at(index);
 }
 
+void ConcreteFarm::buyTruck(Truck *truck) {
+    this->farmer
+}
 
+void ConcreteFarm::sellTruck() {
+
+}
+
+void ConcreteFarm::callTruck() {
+
+}
+
+void ConcreteFarm::startEngine() {
+
+}

@@ -17,7 +17,7 @@ class Farmer {
         State* cropState;
 
         //Composite variables
-        Farm* farm;
+//        Farm* farm;
 
         //Observer variable
         FarmUnit* farmUnit;
@@ -27,6 +27,8 @@ class Farmer {
 
 
     public:
+        Farmer(FarmUnit *farm);
+
         //Mentos/memory methods
         Memory* createMemorySoil();
         Memory* createMemoryCrop();

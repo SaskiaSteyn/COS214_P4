@@ -11,6 +11,7 @@ class Barn : public FarmUnit {
         int threshold;
     public:
         friend class DeliveryTruck;
+        Barn();
         int getCurrentCapacity();
         void increaseCapacity(int amount);
         void decreaseCapacity(int amount);

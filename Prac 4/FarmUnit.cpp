@@ -1,5 +1,12 @@
 #include "FarmUnit.h"
 
+FarmUnit::FarmUnit() {
+//    this->farmer = new Farmer(this);
+//    farmer->setStateSoil(this->soilState);
+//    farmer->setStateCrop(this->cropState);
+
+}
+
 //Memento functions
 void FarmUnit::notifyFarmerSoil(State* oldStateSoil) {
     farmer->setStateSoil(oldStateSoil);
