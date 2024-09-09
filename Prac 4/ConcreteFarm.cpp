@@ -4,12 +4,12 @@ ConcreteFarm::ConcreteFarm() {
 
 }
 
-bool ConcreteFarm::addFarmUnit(Farm* farm) {
+bool ConcreteFarm::addFarmUnit(FarmUnit* farm) {
     this->farms.push_back(farm);
     return true;
 }
 
-bool ConcreteFarm::removeFarmUnit(Farm* farm) {
+bool ConcreteFarm::removeFarmUnit(FarmUnit* farm) {
     for (int i = 0; i < this->farms.size(); i++) {
 
         if (this->farms[i] == farm) {

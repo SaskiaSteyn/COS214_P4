@@ -15,17 +15,23 @@ class Farmer;
 class FarmUnit : public Farm {
     private:
     //memento: these states get sent to farmer
+
         State* soilState;
         State* cropState;
 
     public:
+        //Constructor
+        FarmUnit() {};
+        virtual ~FarmUnit() {}
+
         //Memory method
         void notifyFarmerSoil(State* oldStateSoil);
         void notifyFarmerCrop(State* oldStateCrop);
 
         //State method
-        void setStateSoil(State* newSoilState);
-        void setStateCrop(State* newCropState);
+        virtual void setStateSoil(SoilState* newSoilState) = 0;
+        virtual void setStateCrop(CropState* newCropState) = 0;
+
 
         //Start/truck class
         friend class Truck;
@@ -35,9 +41,9 @@ class FarmUnit : public Farm {
         virtual void startEngine() = 0;
 
         //Composite methods
-        bool addFarmUnit(Farm* farm);
-        bool removeFarmUnit(Farm* farm);
-        Farm* getFarmUnit(int index);
+        bool addFarmUnit(FarmUnit* farm) {return false;};
+        bool removeFarmUnit(FarmUnit* farm) {return false;};
+        Farm* getFarmUnit(int index) {return nullptr;};
 
         //observer methods
         State* getSoilState();

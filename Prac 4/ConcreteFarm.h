@@ -5,14 +5,19 @@
 #include <vector>
 
 class ConcreteFarm : public Farm {
+    public:
+        ConcreteFarm();
+        bool addFarmUnit(FarmUnit* farm);
+        bool removeFarmUnit(FarmUnit* farm);
+        Farm* getFarmUnit(int index);
 
-    ConcreteFarm();
-    bool addFarmUnit(Farm* farm);
-    bool removeFarmUnit(Farm* farm);
-    Farm* getFarmUnit(int index);
+        State* getSoilState() {return nullptr;};
+        State* getCropState() {return nullptr;};
+        void setSoilState(SoilState* soilState) {};
+        void setCropState(CropState* cropState) {};
 
     protected:
-        vector<Farm*> farms;
+        vector<FarmUnit*> farms;
 };
 
 #endif
