@@ -62,11 +62,11 @@ FarmUnit::FarmUnit() {
 //     return this->farms.at(index);
 // }
 
-State *FarmUnit::getSoilState() {
-    return this->soilState;
-}
-
-State *FarmUnit::getCropState() {
-    return this->cropState;
-}
+//State *FarmUnit::getSoilState() {
+//    return this->soilState;
+//}
+//
+//State *FarmUnit::getCropState() {
+//    return this->cropState;
+//}
 

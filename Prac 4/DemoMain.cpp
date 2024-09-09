@@ -93,6 +93,7 @@ void printMap(Iterator *gameMap) {
             cout << endl;
             farmNo = 0;
         }
+        current = gameMap->getNext();
     }
 }
 

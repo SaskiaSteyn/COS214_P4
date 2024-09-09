@@ -8,7 +8,7 @@
 #include "FarmUnit.h"
 #include "ConcreteFarm.h"
 
-//class ConcreteFarm;
+class ConcreteFarm;
 //class FarmUnit;
 
 class Farmer {
