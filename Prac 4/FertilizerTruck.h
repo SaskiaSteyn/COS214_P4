@@ -8,6 +8,7 @@
 //#include "State.h"
 
 class FertilizerTruck : public Truck {
+    FertilizerTruck();
     void startEngine(FarmUnit *farm);
 };
 

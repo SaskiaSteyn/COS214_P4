@@ -17,11 +17,11 @@ void CropField::setCropState(CropState *cropState) {
 
 }
 
-State * CropField::getSoilState() {
+SoilState * CropField::getSoilState() {
     return soilState;
 }
 
-State * CropField::getCropState() {
+CropState * CropField::getCropState() {
     return cropState;
 }
 

@@ -7,7 +7,8 @@
 
 class DeliveryTruck : public Truck {
     public:
-        void shipOffCrops(Barn *barn);
+        DeliveryTruck();
+        void startEngine(FarmUnit *barn);
 };
 
 #endif

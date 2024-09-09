@@ -22,3 +22,11 @@ void Barn::decreaseCapacity(int amount) {
     }
 
 }
+
+void Barn::setCapacity(int amount) {
+    this->currentCapacity = amount;
+}
+
+int Barn::getThreshhold() {
+    return this->threshold;
+}

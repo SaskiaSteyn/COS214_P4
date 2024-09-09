@@ -20,3 +20,6 @@ void FloodedSoil::rain(CropField *context) {
     cout << "It has started raining on a flooded crop field" << endl;
 }
 
+int FloodedSoil::getProductionMultiplier() {
+    return this->productionMultiplier;
+}

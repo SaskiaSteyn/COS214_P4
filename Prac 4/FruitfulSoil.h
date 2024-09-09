@@ -18,6 +18,7 @@ class FruitfulSoil : public SoilState {
 
         void harvestCrops(int yield, CropField* context);
         void rain(CropField* context);
+        int getProductionMultiplier();
 
 };
 

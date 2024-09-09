@@ -22,3 +22,6 @@ void DrySoil::rain(CropField* context) {
     context->setSoilState(new MoistSoil());
 }
 
+int DrySoil::getProductionMultiplier() {
+    return this->productionMultiplier;
+}

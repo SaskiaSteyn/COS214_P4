@@ -21,8 +21,8 @@ class CropField : public FarmUnit{
 
         void setSoilState(SoilState* soilState);
         void setCropState(CropState* cropState);
-        State* getSoilState();
-        State* getCropState();
+        SoilState* getSoilState();
+        CropState* getCropState();
 
         bool getCropStatus();
 
@@ -31,6 +31,12 @@ class CropField : public FarmUnit{
         void sellTruck() {};
         void callTruck() {};
         void startEngine() {};
+
+        int getCurrentCapacity() {return -1;};
+        void increaseCapacity(int amount) {};
+        void decreaseCapacity(int amount) {};
+        void setCapacity(int amount) {};
+        int getThreshhold() {return -1;};
 };
 
 #endif

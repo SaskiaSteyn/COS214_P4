@@ -8,33 +8,33 @@ FarmUnit::FarmUnit() {
 }
 
 //Memento functions
-void FarmUnit::notifyFarmerSoil(State* oldStateSoil) {
-    farmer->setStateSoil(oldStateSoil);
+//void FarmUnit::notifyFarmerSoil(State* oldStateSoil) {
+//    farmer->setStateSoil(oldStateSoil);
+//
+//}
+//
+//void FarmUnit::notifyFarmerCrop(State* oldStateCrop) {
+//    farmer->setStateCrop(oldStateCrop);
+//
+//}
+//
+//
+////State setting state methods
+//void FarmUnit::setStateSoil(State* newSoilState) {
+//    notifyFarmerSoil(soilState);
+//    this->soilState = newSoilState;
+//
+//    this->farmer->updateFarmState();
+//
+//}
 
-}
-
-void FarmUnit::notifyFarmerCrop(State* oldStateCrop) {
-    farmer->setStateCrop(oldStateCrop);
-
-}
-
-
-//State setting state methods
-void FarmUnit::setStateSoil(State* newSoilState) {
-    notifyFarmerSoil(soilState);
-    this->soilState = newSoilState;
-
-    this->farmer->updateFarmState();
-
-}
-
-void FarmUnit::setStateCrop(State* newCropState) {
-    notifyFarmerCrop(cropState);
-    this->cropState = newCropState;
-
-    this->farmer->updateFarmState();
-
-}
+//void FarmUnit::setStateCrop(State* newCropState) {
+//    notifyFarmerCrop(cropState);
+//    this->cropState = newCropState;
+//
+//    this->farmer->updateFarmState();
+//
+//}
 
 
 //Composite methods

@@ -2,9 +2,9 @@
 #define CROPSTATE_H
 
 #include "State.h"
-#include "CropField.h"
+//#include "CropField.h"
 
-class CropField;
+//class CropField;
 
 class CropState : public State {
     public:
@@ -12,6 +12,11 @@ class CropState : public State {
 
         virtual bool isReadyForHarvest() = 0;
         virtual void growCrops(CropField* context) = 0;
+
+        void harvestCrops(int yield, CropField* context) {};
+        void rain(CropField* context) {};
+
+    int getProductionMultiplier() {return -1;};
 };
 
 #endif

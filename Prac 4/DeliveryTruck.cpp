@@ -1,5 +1,7 @@
 #include "DeliveryTruck.h"
 
-void DeliveryTruck::shipOffCrops(Barn *barn) {
+DeliveryTruck::DeliveryTruck() : Truck("Delivery"){}
+
+void DeliveryTruck::startEngine(FarmUnit *barn) {
     barn->decreaseCapacity(barn->getCurrentCapacity());
 }

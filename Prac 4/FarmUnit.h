@@ -3,6 +3,8 @@
 
 #include "Farm.h"
 #include "State.h"
+#include "SoilState.h"
+#include "CropState.h"
 //#include "Truck.h"
 
 class Truck;
@@ -14,19 +16,15 @@ class Farmer;
 class FarmUnit : public Farm {
     private:
     //memento: these states get sent to farmer
-        State* soilState;
-        State* cropState;
+        SoilState* soilState;
+        CropState* cropState;
 
     public:
         FarmUnit();
 
-        //Memory method
-        void notifyFarmerSoil(State* oldStateSoil);
-        void notifyFarmerCrop(State* oldStateCrop);
-
         //State method
-        void setStateSoil(State* newSoilState);
-        void setStateCrop(State* newCropState);
+        virtual void setSoilState(SoilState* newSoilState) = 0;
+        virtual void setCropState(CropState* newCropState) = 0;
 
         //Composite methods
         bool addFarmUnit(FarmUnit* farm) {return false;};
@@ -34,9 +32,14 @@ class FarmUnit : public Farm {
         FarmUnit* getFarmUnit(int index) {return nullptr;};
 
         //observer methods
-        virtual State* getSoilState() = 0;
-        virtual State* getCropState() = 0;
+        virtual SoilState* getSoilState() = 0;
+        virtual CropState* getCropState() = 0;
 
+        virtual int getCurrentCapacity() = 0;
+        virtual void increaseCapacity(int amount) = 0;
+        virtual void decreaseCapacity(int amount) = 0;
+        virtual void setCapacity(int amount) = 0;
+        virtual int getThreshhold() = 0;
 };
 
 #endif
