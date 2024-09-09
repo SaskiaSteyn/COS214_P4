@@ -15,8 +15,14 @@ class MoistSoil : public SoilState {
     public:
         string getName();
 
+<<<<<<< Updated upstream
         void harvestCrops(int yield, CropField* context);
         void rain(CropField* context);
+=======
+        void harvestCrops(int yield, ConcreteFarm* context);
+        void rain(FarmUnit* context);
+        int getProductionMultiplier();
+>>>>>>> Stashed changes
 };
 
 #endif

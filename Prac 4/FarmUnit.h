@@ -43,7 +43,13 @@ class FarmUnit : public Farm {
         //Composite methods
         bool addFarmUnit(FarmUnit* farm) {return false;};
         bool removeFarmUnit(FarmUnit* farm) {return false;};
+<<<<<<< Updated upstream
         Farm* getFarmUnit(int index) {return nullptr;};
+=======
+        FarmUnit* getFarmUnit(int index) {return nullptr;};
+        virtual bool getCropStatus() = 0;
+        virtual void rain(FarmUnit *context);
+>>>>>>> Stashed changes
 
         //observer methods
         State* getSoilState();

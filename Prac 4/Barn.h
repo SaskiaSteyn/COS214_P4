@@ -17,6 +17,7 @@ class Barn : public FarmUnit {
         void increaseCapacity(int amount);
         void decreaseCapacity(int amount);
 
+<<<<<<< Updated upstream
         void buyTruck(Truck* truck) {};
         void sellTruck() {};
         void callTruck() {};
@@ -29,6 +30,13 @@ class Barn : public FarmUnit {
         void setStateCrop(CropState* newCropState) {};
         State* getSoilState() {};
         State* getCropState() {};
+=======
+    void setSoilState(State* soilState) {};
+    void setCropState(State* cropState) {};
+    SoilState* getSoilState() {return nullptr;};
+    CropState* getCropState() {return nullptr;};
+    bool getCropStatus() {return false;}
+>>>>>>> Stashed changes
 };
 
 #endif

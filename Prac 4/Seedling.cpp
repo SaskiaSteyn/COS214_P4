@@ -10,7 +10,7 @@ bool Seedling:: isReadyForHarvest() {
 
 }
 
-void Seedling::growCrops(CropField *context) {
+void Seedling::growCrops(FarmUnit *context) {
     cout << "Your seedling are slowly growing!" << endl;
     context->setCropState(new Growing());
 

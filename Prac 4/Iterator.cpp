@@ -1,53 +1,76 @@
 #include "Iterator.h"
 
-Iterator::Iterator(map<string, Farm *> farms) {
+Iterator::Iterator(map<string, ConcreteFarm *> farms) {
     this->farms = farms;
-    this->current = this->farms.begin()->second;
+    this->current = this->farms.begin();
 }
 
-Farm *Iterator::getFarm(string farmName) {
-    Farm * possibleFarm = farms.find(farmName)->second;
+ConcreteFarm *Iterator::getFarm(string farmName) {
+//    Farm * possibleFarm = farms.find(farmName)->second;
+//
+//    if (possibleFarm != nullptr) {
+//        current = possibleFarm;
+//        return current;
+//    }
+//    else {
+//        current = nullptr;
+//        return current;
+//    }
 
-    if (possibleFarm != nullptr) {
-        current = possibleFarm;
-        return current;
-    }
-    else {
-        current = nullptr;
-        return current;
-    }
-}
+    map<string, ConcreteFarm*> ::iterator temp;
 
-Farm *Iterator::getStart() {
-    this->current = this->farms.begin()->second;
-    return current;
-}
-
-Farm *Iterator::getEnd() {
-    this->current = this->farms.end()->second;
-    return current;
-}
-
-Farm *Iterator::getNext() {
-    if (current == farms.end()->second) {
-        return nullptr;
+    for (temp == farms.begin(); temp != farms.end(); ++temp) {
+        if (temp->first == farmName) {
+            return temp->second;
+        }
     }
 
-    current = next(current);
-
-    return current;
+    return nullptr;
 }
 
-Farm *Iterator::getPrevious() {
-    if (current == farms.begin()->second) {
-        return nullptr;
-    }
-
-    current = prev(current);
-
-    return current;
+ConcreteFarm *Iterator::getStart() {
+    this->current = this->farms.begin();
+    return current->second;
 }
 
+<<<<<<< Updated upstream
 Farm * Iterator::getCurrent() {
     return current;
 }
+=======
+ConcreteFarm *Iterator::getEnd() {
+    this->current = this->farms.begin();
+    return current->second;
+}
+
+ConcreteFarm *Iterator::getNext() {
+//    if (current == farms.end()->second) {
+//        return nullptr;
+//    }
+//
+//    current = next(current);
+
+    current++;
+
+//    if (current->second == nullptr) {
+//        return nullptr;
+//    }
+
+    return current->second;
+}
+
+ConcreteFarm *Iterator::getPrevious() {
+//    if (current == farms.begin()->second) {
+//        return nullptr;
+//    }
+//
+//    current = prev(current);
+
+    current--;
+    return current->second;
+}
+
+ConcreteFarm * Iterator::getCurrent() {
+    return current->second;
+}
+>>>>>>> Stashed changes

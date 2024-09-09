@@ -4,8 +4,8 @@ string MoistSoil::getName() {
     return this->name;
 }
 
-void MoistSoil:: harvestCrops(int yield, CropField* context) {
-    if(!context->getCropStatus()){
+void MoistSoil:: harvestCrops(int yield, ConcreteFarm* context) {
+    if(!context->getFarmUnit(0)->getCropStatus()){
         return;
     }
 
@@ -15,7 +15,7 @@ void MoistSoil:: harvestCrops(int yield, CropField* context) {
 
 }
 
-void MoistSoil::rain(CropField *context) {
+void MoistSoil::rain(FarmUnit *context) {
     cout << "It has started raining on a moist crop field" << endl;
     context->setSoilState(new FruitfulSoil());
 

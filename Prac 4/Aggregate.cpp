@@ -1,5 +1,5 @@
 #include "Aggregate.h"
 
-Iterator *Aggregate::createIterator(map<string, Farm *> farms) {
+Iterator *Aggregate::createIterator(map<string, ConcreteFarm *> farms) {
     return new Iterator(farms);
 }

@@ -1,0 +1,2173 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/DemoMain.cpp
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\DemoMain.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\DemoMain.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:
+        -:    3:#include "CropField.h"
+        -:    4:#include "FarmUnit.h"
+        -:    5:
+        -:    6:using namespace std;
+        -:    7:
+        -:    8:#include <map>
+        -:    9:#include <string>
+        -:   10:
+        -:   11:#include "Aggregate.h"
+        -:   12:#include "Iterator.h"
+        -:   13:#include "Farm.h"
+        -:   14:#include "ConcreteFarm.h"
+        -:   15:#include "CropField.h"
+        -:   16:#include "State.h"
+        -:   17:#include "CropState.h"
+        -:   18:#include "SoilState.h"
+        -:   19:
+        -:   20:#include "DrySoil.h"
+        -:   21:#include "MoistSoil.h"
+        -:   22:#include "FloodedSoil.h"
+        -:   23:#include "FruitfulSoil.h"
+        -:   24:
+        -:   25:#include "Seedling.h"
+        -:   26:#include "Growing.h"
+        -:   27:#include "FullyGrown.h"
+        -:   28:
+function _Z12MenuPrintoutv called 1 returned 100% blocks executed 100%
+        1:   29:void MenuPrintout(){
+        -:   30:        cout << "\033[38;5;64m                                                                                                                     \n"
+        -:   31:            "                ........                                                                      ...:::..               \n"
+        -:   32:            "          .:+#%%@@@@@@@@@%%%*=:.                                                         .-*%%@@@@@@@@%%+..          \n"
+        -:   33:            "      .-%@@@@@@@@@@@@@@@@@@@@@@@@@#=:..                  ..:+#%%#=:..                .:+@@@@@@@@@@@@@@@@@@@*:        \n"
+        -:   34:            "...=%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%*=::.......:=#@@@@@@@@@@@@@@@%*-::::::-+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@%-.... \n"
+        -:   35:            "+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#=.\n"
+        -:   36:            "####################################################################################################################*\033[0m\n"
+        -:   37:            "\033[38;5;172m\n"
+        -:   38:            "                                /$$                                                     /$$              \n"
+        -:   39:            "                               | $$                                                    | $$              \n"
+        -:   40:            "        /$$  /$$  /$$  /$$$$$$ | $$  /$$$$$$$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$        /$$$$$$    /$$$$$$ \n"
+        -:   41:            "       | $$ | $$ | $$ /$$__  $$| $$ /$$_____/ /$$__  $$| $$_  $$_  $$ /$$__  $$      |_  $$_/   /$$__  $$\n"
+        -:   42:            "       | $$ | $$ | $$| $$$$$$$$| $$| $$      | $$  \\ $$| $$ \\ $$ \\ $$| $$$$$$$$        | $$    | $$  \\ $$\n"
+        -:   43:            "       | $$ | $$ | $$| $$_____/| $$| $$      | $$  | $$| $$ | $$ | $$| $$_____/        | $$ /$$| $$  | $$\n"
+        -:   44:            "       |  $$$$$/$$$$/|  $$$$$$$| $$|  $$$$$$$|  $$$$$$/| $$ | $$ | $$|  $$$$$$$        |  $$$$/|  $$$$$$/\n"
+        -:   45:            "        \\_____/\\___/  \\_______/|__/ \\_______/ \\______/ |__/ |__/ |__/ \\_______/         \\___/   \\______/ \n"
+        -:   46:            "                                                                                                  \n"
+        -:   47:            "        /$$   /$$                                               /$$                               /$$\n"
+        -:   48:            "       | $$  | $$                                              | $$                              | $$\n"
+        -:   49:            "       | $$  | $$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$   /$$$$$$$ /$$$$$$    /$$$$$$   /$$$$$$   /$$$$$$$\n"
+        -:   50:            "       | $$$$$$$$ /$$__  $$| $$_  $$_  $$ /$$__  $$ /$$_____/|_  $$_/   /$$__  $$ |____  $$ /$$__  $$\n"
+        -:   51:            "       | $$__  $$| $$  \\ $$| $$ \\ $$ \\ $$| $$$$$$$$|  $$$$$$   | $$    | $$$$$$$$  /$$$$$$$| $$  | $$\n"
+        -:   52:            "       | $$  | $$| $$  | $$| $$ | $$ | $$| $$_____/ \\____  $$  | $$ /$$| $$_____/ /$$__  $$| $$  | $$\n"
+        -:   53:            "       | $$  | $$|  $$$$$$/| $$ | $$ | $$|  $$$$$$$ /$$$$$$$/  |  $$$$/|  $$$$$$$|  $$$$$$$|  $$$$$$$\n"
+        -:   54:            "       |__/  |__/ \\______/ |__/ |__/ |__/ \\_______/|_______/    \\___/   \\_______/ \\_______/ \\_______/\n"
+        1:   55:            "                                                                                              \033[0m" << endl;
+        1:   55-block  0
+call    0 returned 1
+call    1 returned 1
+        -:   56:
+        -:   57:            cout << "\033[38;5;94m .......................           ....................    ............  .........  ....... ....... ........  ........\n"
+        -:   58:            "%@@@@@@@@@@@@%*++=-:.        .:=++#@@@@@@@@@@@@@#+-.. .:=*%@@@@@@@%+.. .+%@@@@@=. .*@@@%=. +@@@@#. .%@@@@%-.  =%@@@@%\n"
+        -:   59:            "%@@@@#+==-:...        .:=+*#@@@@@@@@@@@@@@@#+=..  .-+#@@@@@@@@@@*-. .:*@@@@@@*. .:#@@@@#. .#@@@@#:  *@@@@@%=. .:#@@@%\n"
+        -:   60:            "--:...         .:=*#%@@@@@@@@@@@@@@@@@@*-:..  .-*%@@@@@@@@@@@#-.. .=%@@@@@@#:. .-%@@@@@-  +@@@@@%-  -@@@@@@@=   .+@@%\n"
+        -:   61:            "        ..=*#%@@@@@@@@@@@@@@@@@@@@@%=:.   .:*%@@@@@@@@@@@@%+:. ..+%@@@@@@%=.. .*@@@@@@%. :#@@@@@@=. .%@@@@@@@=   .-%%\n"
+        1:   62:            " ..-*#%@@@@@@@@@@@@@@@@@@@@@@@@@+:...  .+%@@@@@@@@@@@@@@#:..  .#@@@@@@@@*.. .+@@@@@@@@. .=@@@@@@@+.  +@@@@@@@@=   ..*\n \033[0m";
+call    0 returned 1
+        1:   63:};
+        -:   64:
+function _Z6moveUpv called 0 returned 0% blocks executed 0%
+    #####:   65:void moveUp() {
+    #####:   66:    cout << endl << "Moving Up" << endl;
+    %%%%%:   66-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   67:}
+        -:   68:
+function _Z8moveDownv called 0 returned 0% blocks executed 0%
+    #####:   69:void moveDown() {
+    #####:   70:    cout << endl << "Moving Down" << endl;
+    %%%%%:   70-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   71:}
+        -:   72:
+function _Z8moveLeftv called 0 returned 0% blocks executed 0%
+    #####:   73:void moveLeft() {
+    #####:   74:    cout << endl << "Moving Left" << endl;
+    %%%%%:   74-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   75:}
+        -:   76:
+function _Z9moveRightv called 0 returned 0% blocks executed 0%
+    #####:   77:void moveRight() {
+    #####:   78:    cout << endl << "Moving Right" << endl;
+    %%%%%:   78-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   79:}
+        -:   80:
+function _Z7action1v called 0 returned 0% blocks executed 0%
+    #####:   81:void action1() {
+    #####:   82:    cout << endl << "Action 1" << endl;
+    %%%%%:   82-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   83:}
+        -:   84:
+function _Z7action2v called 0 returned 0% blocks executed 0%
+    #####:   85:void action2() {
+    #####:   86:    cout << endl << "Action 2" << endl;
+    %%%%%:   86-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   87:}
+        -:   88:
+function _Z11farmAction1v called 0 returned 0% blocks executed 0%
+    #####:   89:void farmAction1() {
+    #####:   90:    cout << endl << "Farm Action 1" << endl;
+    %%%%%:   90-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   91:}
+        -:   92:
+function _Z13farmSellTruckv called 0 returned 0% blocks executed 0%
+    #####:   93:void farmSellTruck() {
+    #####:   94:    cout << endl << "Farm Sell Truck" << endl;
+    %%%%%:   94-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   95:}
+        -:   96:
+function _Z12farmBuyTruckv called 0 returned 0% blocks executed 0%
+    #####:   97:void farmBuyTruck() {
+    #####:   98:    cout << endl << "Farm Buy Truck" << endl;
+    %%%%%:   98-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   99:}
+        -:  100:
+function _Z11farmAction3v called 0 returned 0% blocks executed 0%
+    #####:  101:void farmAction3() {
+    #####:  102:    cout << endl << "Farm Action 3" << endl;
+    %%%%%:  102-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  103:}
+        -:  104:
+function _Z11farmAction4v called 0 returned 0% blocks executed 0%
+    #####:  105:void farmAction4() {
+    #####:  106:    cout << endl << "Farm Action 4" << endl;
+    %%%%%:  106-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  107:}
+        -:  108:
+function _Z8printMapSt3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEP12ConcreteFarmSt4lessIS5_ESaISt4pairIKS5_S7_EEE called 1 returned 100% blocks executed 70%
+        1:  109:void printMap(map<string, ConcreteFarm*> farms) {
+        1:  110:    int farmNo = 0;
+        1:  111:    int index = 0;
+        -:  112://    Farm *current = nullptr;
+        1:  113:    map<string, ConcreteFarm*> ::iterator current;
+        1:  113-block  0
+call    0 returned 1
+       17:  114:    string line[3][2];
+        3:  114-block  0
+        6:  114-block  1
+call    0 returned 6
+        9:  114-block  2
+branch  1 taken 6
+branch  2 taken 3 (fallthrough)
+        3:  114-block  3
+        4:  114-block  4
+branch  3 taken 3
+branch  4 taken 1 (fallthrough)
+        1:  114-block  5
+        6:  114-block  6
+call    5 returned 6
+    $$$$$:  114-block  7
+    $$$$$:  114-block  8
+call    6 never executed
+        1:  115:    cout << endl;
+        1:  115-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  116:
+        1:  117:    string topAndEndLine = "-------";
+        1:  117-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  117-block  1
+        8:  118:    string cropLines[3];
+        3:  118-block  0
+call    0 returned 3
+        4:  118-block  1
+branch  1 taken 3
+branch  2 taken 1 (fallthrough)
+        1:  118-block  2
+        1:  118-block  3
+        3:  118-block  4
+call    3 returned 3
+    $$$$$:  118-block  5
+    $$$$$:  118-block  6
+call    4 never executed
+        1:  119:    string otherLine = "";
+        1:  119-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  119-block  1
+        -:  120:
+        -:  121:    //for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr)
+       10:  122:    for (current = farms.begin(); current != farms.end(); ++current) {
+call    0 returned 1
+call    1 returned 9
+       10:  122-block  0
+call    2 returned 10
+call    3 returned 10
+branch  4 taken 9
+branch  5 taken 1 (fallthrough)
+        -:  123:
+        9:  124:        if (current->second == nullptr) {
+        9:  124-block  0
+call    0 returned 9
+branch  1 taken 0 (fallthrough)
+branch  2 taken 9
+    #####:  125:            return;
+    %%%%%:  125-block  0
+        -:  126:        }
+        9:  127:        string name = current->second->getName();
+        9:  127-block  0
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0 (throw)
+        9:  128:        string crop = "";
+        9:  128-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  128-block  1
+        9:  129:        if (current->second->getFarmUnit(0)->getSoilState()->getName() == "DrySoil") {
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0 (throw)
+        9:  129-block  0
+call    4 returned 9
+branch  5 taken 9 (fallthrough)
+branch  6 taken 0 (throw)
+        9:  129-block  1
+call    7 returned 9
+branch  8 taken 9 (fallthrough)
+branch  9 taken 0 (throw)
+        9:  129-block  2
+call   10 returned 9
+call   11 returned 9
+branch 12 taken 9 (fallthrough)
+branch 13 taken 0
+    $$$$$:  129-block  3
+        9:  130:            otherLine = "|-----|";
+        9:  130-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  131:
+        9:  132:            if (current->second->getFarmUnit(0)->getCropState()->getName() == "Seedling") {
+        9:  132-block  0
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0 (throw)
+        9:  132-block  1
+call    4 returned 9
+branch  5 taken 9 (fallthrough)
+branch  6 taken 0 (throw)
+        9:  132-block  2
+call    7 returned 9
+branch  8 taken 9 (fallthrough)
+branch  9 taken 0 (throw)
+        9:  132-block  3
+call   10 returned 9
+call   11 returned 9
+branch 12 taken 9 (fallthrough)
+branch 13 taken 0
+    $$$$$:  132-block  4
+        9:  133:                cropLines[farmNo] = "|-o-o-|";
+        9:  133-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:  134:                crop = "______\n|----|\n|o-o|\n|----|\n|o-o|\n|----|\n______";
+        9:  134-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  135:            }
+    #####:  136:            else if (current->second->getFarmUnit(0)->getCropState()->getName() == "Growing") {
+    %%%%%:  136-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:  136-block  1
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+    %%%%%:  136-block  2
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:  136-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed
+    $$$$$:  136-block  4
+    #####:  137:                cropLines[farmNo] = "|-ø-ø-|";
+    %%%%%:  137-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  138:                crop = "______\n|----|\n|ø-ø|\n|----|\n|ø-ø|\n|----|\n______";
+    %%%%%:  138-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  139:            }
+        -:  140:            else {
+    #####:  141:                cropLines[farmNo] = "|-Φ-Φ-|";
+    %%%%%:  141-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  142:                crop = "______\n|----|\n|Φ-Φ|\n|----|\n|Φ-Φ|\n|----|\n______";
+    %%%%%:  142-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  143:            }
+        -:  144:        }
+        -:  145:
+        9:  146:        line[farmNo][0] = name;
+        9:  146-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:  147:        line[farmNo][1] = crop;
+        9:  147-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:  148:        farmNo++;
+        -:  149:
+        -:  150:
+        9:  151:        if ((index + 1) % 3 == 0) {
+        9:  151-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 6
+        -:  152:
+        3:  153:            cout << line[0][0] << "\t" << line[1][0] << "\t" << line[2][0] << "\t" << endl;
+        3:  153-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  153-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  153-block  2
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  153-block  3
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:  153-block  4
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:  153-block  5
+call   15 returned 3
+branch 16 taken 3 (fallthrough)
+branch 17 taken 0 (throw)
+        3:  153-block  6
+call   18 returned 3
+branch 19 taken 3 (fallthrough)
+branch 20 taken 0 (throw)
+        3:  154:            cout << topAndEndLine << "\t" << topAndEndLine << "\t" << topAndEndLine << endl;
+        3:  154-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  154-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  154-block  2
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  154-block  3
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:  154-block  4
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:  154-block  5
+call   15 returned 3
+branch 16 taken 3 (fallthrough)
+branch 17 taken 0 (throw)
+        3:  155:            cout << otherLine << "\t" << otherLine << "\t" << otherLine << endl;
+        3:  155-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  155-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  155-block  2
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  155-block  3
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:  155-block  4
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:  155-block  5
+call   15 returned 3
+branch 16 taken 3 (fallthrough)
+branch 17 taken 0 (throw)
+        3:  156:            cout << cropLines[0] << "\t" << cropLines[1] << "\t" << cropLines[2] << endl;
+        3:  156-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  156-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  156-block  2
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  156-block  3
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:  156-block  4
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:  156-block  5
+call   15 returned 3
+branch 16 taken 3 (fallthrough)
+branch 17 taken 0 (throw)
+        3:  157:            cout << otherLine << "\t" << otherLine << "\t" << otherLine << endl;
+        3:  157-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  157-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  157-block  2
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  157-block  3
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:  157-block  4
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:  157-block  5
+call   15 returned 3
+branch 16 taken 3 (fallthrough)
+branch 17 taken 0 (throw)
+        3:  158:            cout << topAndEndLine << "\t" << topAndEndLine << "\t" << topAndEndLine << endl << endl;
+        3:  158-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  158-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  158-block  2
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  158-block  3
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:  158-block  4
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:  158-block  5
+call   15 returned 3
+branch 16 taken 3 (fallthrough)
+branch 17 taken 0 (throw)
+        3:  158-block  6
+call   18 returned 3
+branch 19 taken 3 (fallthrough)
+branch 20 taken 0 (throw)
+        -:  159:
+        -:  160://            cout << line[0][1] << " " << line[1][1] << " " << line[2][1] << " " << endl;
+        3:  161:            cout << endl;
+        3:  161-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  162:            farmNo = 0;
+        3:  162-block  0
+        -:  163:        }
+        9:  164:        index++;
+        9:  165:    }
+        9:  165-block  0
+call    0 returned 9
+call    1 returned 9
+    $$$$$:  165-block  1
+call    2 never executed
+    $$$$$:  165-block  2
+call    3 never executed
+       13:  166:}
+        1:  166-block  0
+        1:  166-block  1
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        4:  166-block  2
+branch  3 taken 3 (fallthrough)
+branch  4 taken 1
+        1:  166-block  3
+        1:  166-block  4
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0
+        7:  166-block  5
+branch  8 taken 6 (fallthrough)
+branch  9 taken 1
+    $$$$$:  166-block  6
+call   10 never executed
+    $$$$$:  166-block  7
+branch 11 never executed (fallthrough)
+branch 12 never executed
+    $$$$$:  166-block  8
+call   13 never executed
+    $$$$$:  166-block  9
+branch 14 never executed (fallthrough)
+branch 15 never executed
+        -:  167:
+function _Z20chooseDefaultControlB5cxx11v called 1 returned 0% blocks executed 89%
+        1:  168:string chooseDefaultControl() {
+        1:  169:    cout << "Choose an action: " << endl;
+        1:  169-block  0
+call    0 returned 1
+call    1 returned 1
+        1:  170:    cout << "W(lowercase):\t" << "Move Up" << endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  171:    cout << "A(lowercase):\t" << "Move Left" << endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  172:    cout << "S(lowercase):\t" << "Move Down" << endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  173:    cout << "D(lowercase):\t" << "Move Right" << endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  174:    cout << "1:\t" << "Choose Left Farm()" << endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  175:    cout << "2:\t" << "Choose Right Farm()" << endl;
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  176:    cout << endl << "Your action: ";
+call    0 returned 1
+call    1 returned 1
+        -:  177:
+        1:  178:    string option;
+call    0 returned 1
+        1:  179:    cin >> option;
+call    0 returned 0
+branch  1 taken 0 (fallthrough)
+branch  2 taken 0 (throw)
+    #####:  180:    return option;
+    %%%%%:  180-block  0
+    %%%%%:  180-block  1
+    =====:  181:}
+    $$$$$:  181-block  0
+call    0 never executed
+        -:  182:
+function _Z16chooseFarmOptionB5cxx1112ConcreteFarm called 0 returned 0% blocks executed 0%
+    #####:  183:string chooseFarmOption(ConcreteFarm farm) {
+    #####:  184:    bool isTruck = true;
+        -:  185:
+    #####:  186:    if (farm.getTruck() == nullptr) {
+    %%%%%:  186-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  187:        isTruck = false;
+    %%%%%:  187-block  0
+        -:  188:    }
+        -:  189:
+    #####:  190:    cout << "Choose an action: " << endl;
+    %%%%%:  190-block  0
+call    0 never executed
+call    1 never executed
+    #####:  191:    cout << "1:\t" << "Make it rain!" << endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  192:
+    #####:  193:    if (isTruck) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  194:        cout << "2:\t" << "Sell the farm's truck" << endl;
+    %%%%%:  194-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  195:    }
+        -:  196:    else {
+    #####:  197:        cout << "2:\t" << "Buy the farm a truck" << endl;
+    %%%%%:  197-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  198:    }
+        -:  199:
+    #####:  200:    cout << "3:\t" << "Call the truck()" << endl;
+    %%%%%:  200-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  201:    cout << "4:\t" << "Crops are ready. Harvest" << endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  202:    cout << endl << "Your action: ";
+call    0 never executed
+call    1 never executed
+        -:  203:
+    #####:  204:    string option;
+call    0 never executed
+    #####:  205:    cin >> option;
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  206:    return option;
+    %%%%%:  206-block  0
+    %%%%%:  206-block  1
+    =====:  207:}
+    $$$$$:  207-block  0
+call    0 never executed
+        -:  208:
+function main called 1 returned 0% blocks executed 50%
+        1:  209:int main() {
+        1:  210:    MenuPrintout();
+        1:  210-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  211:
+        1:  212:    FarmUnit *cocaine = new CropField();
+        1:  212-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  212-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  212-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  212-block  3
+call    8 never executed
+        1:  213:    FarmUnit *heroine = new CropField();
+        1:  213-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  213-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  213-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  213-block  3
+call    8 never executed
+        1:  214:    FarmUnit *morphine = new CropField();
+        1:  214-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  214-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  214-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  214-block  3
+call    8 never executed
+        1:  215:    FarmUnit *tobacco = new CropField();
+        1:  215-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  215-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  215-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  215-block  3
+call    8 never executed
+        1:  216:    FarmUnit *coffee = new CropField();
+        1:  216-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  216-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  216-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  216-block  3
+call    8 never executed
+        1:  217:    FarmUnit *cotton = new CropField();
+        1:  217-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  217-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  217-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  217-block  3
+call    8 never executed
+        1:  218:    FarmUnit *tea = new CropField();
+        1:  218-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  218-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  218-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  218-block  3
+call    8 never executed
+        1:  219:    FarmUnit *weed = new CropField();
+        1:  219-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  219-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  219-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  219-block  3
+call    8 never executed
+        1:  220:    FarmUnit *sugar = new CropField();
+        1:  220-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  220-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  220-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  220-block  3
+call    8 never executed
+        -:  221:
+        1:  222:    SoilState *drySoil = new DrySoil();
+        1:  222-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  222-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  222-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  222-block  3
+call    8 never executed
+        1:  223:    SoilState *moistSoil = new MoistSoil();
+        1:  223-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  223-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  223-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  223-block  3
+call    8 never executed
+        1:  224:    SoilState *floodedSoil = new FloodedSoil();
+        1:  224-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  224-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  224-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  224-block  3
+call    8 never executed
+        1:  225:    SoilState *fruitfulSoil = new FruitfulSoil();
+        1:  225-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  225-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  225-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  225-block  3
+call    8 never executed
+        -:  226:
+        1:  227:    CropState *seedling = new Seedling();
+        1:  227-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  227-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  227-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  227-block  3
+call    8 never executed
+        1:  228:    CropState *growing = new Growing();
+        1:  228-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  228-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  228-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  228-block  3
+call    8 never executed
+        1:  229:    CropState *fullyGrown = new FullyGrown();
+        1:  229-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  229-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  229-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:  229-block  3
+call    8 never executed
+        -:  230:
+        -:  231:
+        1:  232:    map<string, ConcreteFarm*> farms;
+        1:  232-block  0
+call    0 returned 1
+        -:  233:
+        -:  234://    farms.insert(pair<string, Farm*>("Farm 0", new ConcreteFarm()));
+        3:  235:    farms["Farm 0"] = new ConcreteFarm();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  235-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  235-block  1
+        1:  235-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  235-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  235-block  4
+call   12 returned 1
+    $$$$$:  235-block  5
+call   13 never executed
+    $$$$$:  235-block  6
+    $$$$$:  235-block  7
+    $$$$$:  235-block  8
+branch 14 never executed (fallthrough)
+branch 15 never executed
+    $$$$$:  235-block  9
+call   16 never executed
+        2:  236:    farms["Farm 0"]->addFarmUnit(cocaine);
+        1:  236-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  236-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  236-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  236-block  3
+call    9 returned 1
+    $$$$$:  236-block  4
+call   10 never executed
+    $$$$$:  236-block  5
+    $$$$$:  236-block  6
+        4:  237:    farms["Farm 0"]->setName("cocaine");
+        1:  237-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  237-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  237-block  2
+        1:  237-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  237-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  237-block  5
+call   12 returned 1
+call   13 returned 1
+    $$$$$:  237-block  6
+call   14 never executed
+    $$$$$:  237-block  7
+    $$$$$:  237-block  8
+    $$$$$:  237-block  9
+call   15 never executed
+    $$$$$:  237-block 10
+    $$$$$:  237-block 11
+        2:  238:    farms["Farm 0"]->getFarmUnit(0)->setSoilState(drySoil);
+        1:  238-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  238-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  238-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  238-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  238-block  4
+call   12 returned 1
+    $$$$$:  238-block  5
+call   13 never executed
+    $$$$$:  238-block  6
+    $$$$$:  238-block  7
+        1:  239:    farms["Farm 0"]->getFarmUnit(0)->setCropState(seedling);
+        1:  239-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  239-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  239-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  239-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  239-block  4
+call   12 returned 1
+    $$$$$:  239-block  5
+call   13 never executed
+    $$$$$:  239-block  6
+    $$$$$:  239-block  7
+        -:  240:
+        3:  241:    farms["Farm 1"] = new ConcreteFarm();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  241-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  241-block  1
+        1:  241-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  241-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  241-block  4
+call   12 returned 1
+    $$$$$:  241-block  5
+call   13 never executed
+    $$$$$:  241-block  6
+    $$$$$:  241-block  7
+    $$$$$:  241-block  8
+branch 14 never executed (fallthrough)
+branch 15 never executed
+    $$$$$:  241-block  9
+call   16 never executed
+        2:  242:    farms["Farm 1"]->addFarmUnit(heroine);
+        1:  242-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  242-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  242-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  242-block  3
+call    9 returned 1
+    $$$$$:  242-block  4
+call   10 never executed
+    $$$$$:  242-block  5
+    $$$$$:  242-block  6
+        4:  243:    farms["Farm 1"]->setName("heroine");
+        1:  243-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  243-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  243-block  2
+        1:  243-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  243-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  243-block  5
+call   12 returned 1
+call   13 returned 1
+    $$$$$:  243-block  6
+call   14 never executed
+    $$$$$:  243-block  7
+    $$$$$:  243-block  8
+    $$$$$:  243-block  9
+call   15 never executed
+    $$$$$:  243-block 10
+    $$$$$:  243-block 11
+        2:  244:    farms["Farm 1"]->getFarmUnit(0)->setSoilState(drySoil);
+        1:  244-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  244-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  244-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  244-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  244-block  4
+call   12 returned 1
+    $$$$$:  244-block  5
+call   13 never executed
+    $$$$$:  244-block  6
+    $$$$$:  244-block  7
+        1:  245:    farms["Farm 1"]->getFarmUnit(0)->setCropState(seedling);
+        1:  245-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  245-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  245-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  245-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  245-block  4
+call   12 returned 1
+    $$$$$:  245-block  5
+call   13 never executed
+    $$$$$:  245-block  6
+    $$$$$:  245-block  7
+        -:  246:
+        3:  247:    farms["Farm 2"] = new ConcreteFarm();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  247-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  247-block  1
+        1:  247-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  247-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  247-block  4
+call   12 returned 1
+    $$$$$:  247-block  5
+call   13 never executed
+    $$$$$:  247-block  6
+    $$$$$:  247-block  7
+    $$$$$:  247-block  8
+branch 14 never executed (fallthrough)
+branch 15 never executed
+    $$$$$:  247-block  9
+call   16 never executed
+        2:  248:    farms["Farm 2"]->addFarmUnit(morphine);
+        1:  248-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  248-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  248-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  248-block  3
+call    9 returned 1
+    $$$$$:  248-block  4
+call   10 never executed
+    $$$$$:  248-block  5
+    $$$$$:  248-block  6
+        4:  249:    farms["Farm 2"]->setName("morphine");
+        1:  249-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  249-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  249-block  2
+        1:  249-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  249-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  249-block  5
+call   12 returned 1
+call   13 returned 1
+    $$$$$:  249-block  6
+call   14 never executed
+    $$$$$:  249-block  7
+    $$$$$:  249-block  8
+    $$$$$:  249-block  9
+call   15 never executed
+    $$$$$:  249-block 10
+    $$$$$:  249-block 11
+        2:  250:    farms["Farm 2"]->getFarmUnit(0)->setSoilState(drySoil);
+        1:  250-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  250-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  250-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  250-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  250-block  4
+call   12 returned 1
+    $$$$$:  250-block  5
+call   13 never executed
+    $$$$$:  250-block  6
+    $$$$$:  250-block  7
+        1:  251:    farms["Farm 2"]->getFarmUnit(0)->setCropState(seedling);
+        1:  251-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  251-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  251-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  251-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  251-block  4
+call   12 returned 1
+    $$$$$:  251-block  5
+call   13 never executed
+    $$$$$:  251-block  6
+    $$$$$:  251-block  7
+        -:  252:
+        3:  253:    farms["Farm 3"] = new ConcreteFarm();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  253-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  253-block  1
+        1:  253-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  253-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  253-block  4
+call   12 returned 1
+    $$$$$:  253-block  5
+call   13 never executed
+    $$$$$:  253-block  6
+    $$$$$:  253-block  7
+    $$$$$:  253-block  8
+branch 14 never executed (fallthrough)
+branch 15 never executed
+    $$$$$:  253-block  9
+call   16 never executed
+        2:  254:    farms["Farm 3"]->addFarmUnit(tobacco);
+        1:  254-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  254-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  254-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  254-block  3
+call    9 returned 1
+    $$$$$:  254-block  4
+call   10 never executed
+    $$$$$:  254-block  5
+    $$$$$:  254-block  6
+        4:  255:    farms["Farm 3"]->setName("tobacco");
+        1:  255-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  255-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  255-block  2
+        1:  255-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  255-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  255-block  5
+call   12 returned 1
+call   13 returned 1
+    $$$$$:  255-block  6
+call   14 never executed
+    $$$$$:  255-block  7
+    $$$$$:  255-block  8
+    $$$$$:  255-block  9
+call   15 never executed
+    $$$$$:  255-block 10
+    $$$$$:  255-block 11
+        2:  256:    farms["Farm 3"]->getFarmUnit(0)->setSoilState(drySoil);
+        1:  256-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  256-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  256-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  256-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  256-block  4
+call   12 returned 1
+    $$$$$:  256-block  5
+call   13 never executed
+    $$$$$:  256-block  6
+    $$$$$:  256-block  7
+        1:  257:    farms["Farm 3"]->getFarmUnit(0)->setCropState(seedling);
+        1:  257-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  257-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  257-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  257-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  257-block  4
+call   12 returned 1
+    $$$$$:  257-block  5
+call   13 never executed
+    $$$$$:  257-block  6
+    $$$$$:  257-block  7
+        -:  258:
+        3:  259:    farms["Farm 4"] = new ConcreteFarm();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  259-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  259-block  1
+        1:  259-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  259-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  259-block  4
+call   12 returned 1
+    $$$$$:  259-block  5
+call   13 never executed
+    $$$$$:  259-block  6
+    $$$$$:  259-block  7
+    $$$$$:  259-block  8
+branch 14 never executed (fallthrough)
+branch 15 never executed
+    $$$$$:  259-block  9
+call   16 never executed
+        2:  260:    farms["Farm 4"]->addFarmUnit(coffee);
+        1:  260-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  260-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  260-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  260-block  3
+call    9 returned 1
+    $$$$$:  260-block  4
+call   10 never executed
+    $$$$$:  260-block  5
+    $$$$$:  260-block  6
+        4:  261:    farms["Farm 4"]->setName("coffee");
+        1:  261-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  261-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  261-block  2
+        1:  261-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  261-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  261-block  5
+call   12 returned 1
+call   13 returned 1
+    $$$$$:  261-block  6
+call   14 never executed
+    $$$$$:  261-block  7
+    $$$$$:  261-block  8
+    $$$$$:  261-block  9
+call   15 never executed
+    $$$$$:  261-block 10
+    $$$$$:  261-block 11
+        2:  262:    farms["Farm 4"]->getFarmUnit(0)->setSoilState(drySoil);
+        1:  262-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  262-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  262-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  262-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  262-block  4
+call   12 returned 1
+    $$$$$:  262-block  5
+call   13 never executed
+    $$$$$:  262-block  6
+    $$$$$:  262-block  7
+        1:  263:    farms["Farm 4"]->getFarmUnit(0)->setCropState(seedling);
+        1:  263-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  263-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  263-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  263-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  263-block  4
+call   12 returned 1
+    $$$$$:  263-block  5
+call   13 never executed
+    $$$$$:  263-block  6
+    $$$$$:  263-block  7
+        -:  264:
+        3:  265:    farms["Farm 5"] = new ConcreteFarm();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  265-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  265-block  1
+        1:  265-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  265-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  265-block  4
+call   12 returned 1
+    $$$$$:  265-block  5
+call   13 never executed
+    $$$$$:  265-block  6
+    $$$$$:  265-block  7
+    $$$$$:  265-block  8
+branch 14 never executed (fallthrough)
+branch 15 never executed
+    $$$$$:  265-block  9
+call   16 never executed
+        2:  266:    farms["Farm 5"]->addFarmUnit(tea);
+        1:  266-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  266-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  266-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  266-block  3
+call    9 returned 1
+    $$$$$:  266-block  4
+call   10 never executed
+    $$$$$:  266-block  5
+    $$$$$:  266-block  6
+        4:  267:    farms["Farm 5"]->setName("tea");
+        1:  267-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  267-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  267-block  2
+        1:  267-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  267-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  267-block  5
+call   12 returned 1
+call   13 returned 1
+    $$$$$:  267-block  6
+call   14 never executed
+    $$$$$:  267-block  7
+    $$$$$:  267-block  8
+    $$$$$:  267-block  9
+call   15 never executed
+    $$$$$:  267-block 10
+    $$$$$:  267-block 11
+        2:  268:    farms["Farm 5"]->getFarmUnit(0)->setSoilState(drySoil);
+        1:  268-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  268-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  268-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  268-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  268-block  4
+call   12 returned 1
+    $$$$$:  268-block  5
+call   13 never executed
+    $$$$$:  268-block  6
+    $$$$$:  268-block  7
+        1:  269:    farms["Farm 5"]->getFarmUnit(0)->setCropState(seedling);
+        1:  269-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  269-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  269-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  269-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  269-block  4
+call   12 returned 1
+    $$$$$:  269-block  5
+call   13 never executed
+    $$$$$:  269-block  6
+    $$$$$:  269-block  7
+        -:  270:
+        3:  271:    farms["Farm 6"] = new ConcreteFarm();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  271-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  271-block  1
+        1:  271-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  271-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  271-block  4
+call   12 returned 1
+    $$$$$:  271-block  5
+call   13 never executed
+    $$$$$:  271-block  6
+    $$$$$:  271-block  7
+    $$$$$:  271-block  8
+branch 14 never executed (fallthrough)
+branch 15 never executed
+    $$$$$:  271-block  9
+call   16 never executed
+        2:  272:    farms["Farm 6"]->addFarmUnit(cotton);
+        1:  272-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  272-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  272-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  272-block  3
+call    9 returned 1
+    $$$$$:  272-block  4
+call   10 never executed
+    $$$$$:  272-block  5
+    $$$$$:  272-block  6
+        4:  273:    farms["Farm 6"]->setName("cotton");
+        1:  273-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  273-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  273-block  2
+        1:  273-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  273-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  273-block  5
+call   12 returned 1
+call   13 returned 1
+    $$$$$:  273-block  6
+call   14 never executed
+    $$$$$:  273-block  7
+    $$$$$:  273-block  8
+    $$$$$:  273-block  9
+call   15 never executed
+    $$$$$:  273-block 10
+    $$$$$:  273-block 11
+        2:  274:    farms["Farm 6"]->getFarmUnit(0)->setSoilState(drySoil);
+        1:  274-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  274-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  274-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  274-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  274-block  4
+call   12 returned 1
+    $$$$$:  274-block  5
+call   13 never executed
+    $$$$$:  274-block  6
+    $$$$$:  274-block  7
+        1:  275:    farms["Farm 6"]->getFarmUnit(0)->setCropState(seedling);
+        1:  275-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  275-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  275-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  275-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  275-block  4
+call   12 returned 1
+    $$$$$:  275-block  5
+call   13 never executed
+    $$$$$:  275-block  6
+    $$$$$:  275-block  7
+        -:  276:
+        3:  277:    farms["Farm 7"] = new ConcreteFarm();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  277-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  277-block  1
+        1:  277-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  277-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  277-block  4
+call   12 returned 1
+    $$$$$:  277-block  5
+call   13 never executed
+    $$$$$:  277-block  6
+    $$$$$:  277-block  7
+    $$$$$:  277-block  8
+branch 14 never executed (fallthrough)
+branch 15 never executed
+    $$$$$:  277-block  9
+call   16 never executed
+        2:  278:    farms["Farm 7"]->addFarmUnit(weed);
+        1:  278-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  278-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  278-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  278-block  3
+call    9 returned 1
+    $$$$$:  278-block  4
+call   10 never executed
+    $$$$$:  278-block  5
+    $$$$$:  278-block  6
+        4:  279:    farms["Farm 7"]->setName("weed");
+        1:  279-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  279-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  279-block  2
+        1:  279-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  279-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  279-block  5
+call   12 returned 1
+call   13 returned 1
+    $$$$$:  279-block  6
+call   14 never executed
+    $$$$$:  279-block  7
+    $$$$$:  279-block  8
+    $$$$$:  279-block  9
+call   15 never executed
+    $$$$$:  279-block 10
+    $$$$$:  279-block 11
+        2:  280:    farms["Farm 7"]->getFarmUnit(0)->setSoilState(drySoil);
+        1:  280-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  280-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  280-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  280-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  280-block  4
+call   12 returned 1
+    $$$$$:  280-block  5
+call   13 never executed
+    $$$$$:  280-block  6
+    $$$$$:  280-block  7
+        1:  281:    farms["Farm 7"]->getFarmUnit(0)->setCropState(seedling);
+        1:  281-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  281-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  281-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  281-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  281-block  4
+call   12 returned 1
+    $$$$$:  281-block  5
+call   13 never executed
+    $$$$$:  281-block  6
+    $$$$$:  281-block  7
+        -:  282:
+        3:  283:    farms["Farm 8"] = new ConcreteFarm();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  283-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  283-block  1
+        1:  283-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  283-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  283-block  4
+call   12 returned 1
+    $$$$$:  283-block  5
+call   13 never executed
+    $$$$$:  283-block  6
+    $$$$$:  283-block  7
+    $$$$$:  283-block  8
+branch 14 never executed (fallthrough)
+branch 15 never executed
+    $$$$$:  283-block  9
+call   16 never executed
+        2:  284:    farms["Farm 8"]->addFarmUnit(sugar);
+        1:  284-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  284-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  284-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  284-block  3
+call    9 returned 1
+    $$$$$:  284-block  4
+call   10 never executed
+    $$$$$:  284-block  5
+    $$$$$:  284-block  6
+        4:  285:    farms["Farm 8"]->setName("sugar");
+        1:  285-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  285-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  285-block  2
+        1:  285-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  285-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  285-block  5
+call   12 returned 1
+call   13 returned 1
+    $$$$$:  285-block  6
+call   14 never executed
+    $$$$$:  285-block  7
+    $$$$$:  285-block  8
+    $$$$$:  285-block  9
+call   15 never executed
+    $$$$$:  285-block 10
+    $$$$$:  285-block 11
+        2:  286:    farms["Farm 8"]->getFarmUnit(0)->setSoilState(drySoil);
+        1:  286-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  286-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  286-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  286-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  286-block  4
+call   12 returned 1
+    $$$$$:  286-block  5
+call   13 never executed
+    $$$$$:  286-block  6
+    $$$$$:  286-block  7
+        1:  287:    farms["Farm 8"]->getFarmUnit(0)->setCropState(seedling);
+        1:  287-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  287-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  287-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  287-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  287-block  4
+call   12 returned 1
+    $$$$$:  287-block  5
+call   13 never executed
+    $$$$$:  287-block  6
+    $$$$$:  287-block  7
+        -:  288:
+        -:  289:
+        -:  290:    Aggregate gameMap;
+        1:  291:    Iterator *mapObj = gameMap.createIterator(farms);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  291-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  291-block  1
+call    6 returned 1
+    $$$$$:  291-block  2
+call    7 never executed
+    $$$$$:  291-block  3
+        -:  292:
+        -:  293:
+        1:  294:    printMap(farms);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  294-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  294-block  1
+call    6 returned 1
+    $$$$$:  294-block  2
+call    7 never executed
+    $$$$$:  294-block  3
+        -:  295:
+        1:  296:    bool onFarm = false;
+        1:  297:    ConcreteFarm* current = mapObj->getCurrent();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  298:
+        1:  299:    if (!onFarm) {
+        1:  299-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  300:        string command = chooseDefaultControl();
+        1:  300-block  0
+call    0 returned 0
+branch  1 taken 0 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  301:
+    #####:  302:        if (command == "w") {
+    %%%%%:  302-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  303:            moveUp();
+    %%%%%:  303-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  304:        }
+    #####:  305:        if (command == "a") {
+    %%%%%:  305-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  306:            moveLeft();
+    %%%%%:  306-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  307:        }
+    #####:  308:        if (command == "s") {
+    %%%%%:  308-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  309:            moveDown();
+    %%%%%:  309-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  310:        }
+    #####:  311:        if (command == "d") {
+    %%%%%:  311-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  312:            moveRight();
+    %%%%%:  312-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  313:        }
+    #####:  314:        if (command == "1") {
+    %%%%%:  314-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  315:            action1();
+    %%%%%:  315-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  316:        }
+    #####:  317:        if (command == "2") {
+    %%%%%:  317-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  318:            action2();
+    %%%%%:  318-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  319:        }
+    #####:  320:    }
+    %%%%%:  320-block  0
+call    0 never executed
+    $$$$$:  320-block  1
+call    1 never executed
+        -:  321:    else {
+        -:  322://        string command = chooseFarmOption(current);
+        -:  323:    }
+        -:  324:
+        -:  325:
+        -:  326:
+    #####:  327:    return 0;
+    #####:  328:}
+    %%%%%:  328-block  0
+call    0 never executed
+    $$$$$:  328-block  1
+call    1 never executed

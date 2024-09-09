@@ -8,12 +8,13 @@
 
 #include "Iterator.h"
 #include "Farm.h"
+#include "ConcreteFarm.h"
 
 using namespace std;
 
 class Aggregate {
     public:
-        Iterator * createIterator(map<string, Farm *> farms);
+        Iterator * createIterator(map<string, ConcreteFarm *> farms);
 };
 
 #endif

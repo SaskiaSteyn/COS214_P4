@@ -14,7 +14,7 @@ class Seedling : public CropState {
         string getName();
 
         bool isReadyForHarvest();
-        void growCrops(CropField* context);
+        void growCrops(FarmUnit* context);
 };
 
 #endif
