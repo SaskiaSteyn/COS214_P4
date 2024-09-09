@@ -1,0 +1,67 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/DrySoil.cpp
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\DrySoil.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\DrySoil.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "DrySoil.h"
+        -:    2:
+        -:    3:
+function _ZN7DrySoil7getNameB5cxx11Ev called 9 returned 100% blocks executed 100%
+        9:    4:string DrySoil::getName() {
+        9:    5:    return this->name;
+        9:    5-block  0
+call    0 returned 9
+        -:    6:}
+        -:    7:
+function _ZN7DrySoil12harvestCropsEiP9CropField called 0 returned 0% blocks executed 0%
+    #####:    8:void DrySoil:: harvestCrops(int yield, CropField* context){
+        -:    9:
+    #####:   10:    if(!context->getCropStatus()){
+    %%%%%:   10-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   11:        return;
+    %%%%%:   11-block  0
+        -:   12:    }
+        -:   13:
+    #####:   14:    cout << "Your soil has been dry. Your crops are not bountiful" << endl;
+    %%%%%:   14-block  0
+call    0 never executed
+call    1 never executed
+        -:   15:
+    #####:   16:    cout << "You have harvested " << yield * productionMultiplier << " crops." << endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+        -:   17:
+        -:   18:}
+        -:   19:
+function _ZN7DrySoil4rainEP9CropField called 0 returned 0% blocks executed 0%
+    #####:   20:void DrySoil::rain(CropField* context) {
+    #####:   21:    cout << "It has started raining on a dry crop field" << endl;
+    %%%%%:   21-block  0
+call    0 never executed
+call    1 never executed
+    #####:   22:    context->setSoilState(new MoistSoil());
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:   22-block  0
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+    $$$$$:   22-block  1
+branch  7 never executed (fallthrough)
+branch  8 never executed
+    $$$$$:   22-block  2
+call    9 never executed
+    #####:   23:}
+    %%%%%:   23-block  0
+        -:   24:
+function _ZN7DrySoil23getProductionMultiplierEv called 0 returned 0% blocks executed 0%
+    #####:   25:int DrySoil::getProductionMultiplier() {
+    #####:   26:    return this->productionMultiplier;
+    %%%%%:   26-block  0
+        -:   27:}

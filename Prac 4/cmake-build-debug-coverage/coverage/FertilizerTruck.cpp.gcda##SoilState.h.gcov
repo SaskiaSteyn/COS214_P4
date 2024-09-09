@@ -1,0 +1,30 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/SoilState.h
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\FertilizerTruck.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\FertilizerTruck.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef SOILSTATE_H
+        -:    2:#define SOILSTATE_H
+        -:    3:
+        -:    4:#include "State.h"
+        -:    5://#include "CropField.h"
+        -:    6:
+        -:    7:class CropField;
+        -:    8:
+        -:    9:class SoilState : public State {
+        -:   10:
+        -:   11:    public:
+        -:   12:        virtual string getName() = 0;
+        -:   13:
+        -:   14:        virtual void harvestCrops(int yield, CropField* context) = 0;
+        -:   15:        virtual void rain(CropField* context) = 0;
+        -:   16:
+function _ZN9SoilState17isReadyForHarvestEv called 0 returned 0% blocks executed 0%
+    #####:   17:        bool isReadyForHarvest() {return false;};
+    %%%%%:   17-block  0
+function _ZN9SoilState9growCropsEP9CropField called 0 returned 0% blocks executed 0%
+    #####:   18:        void growCrops(CropField* context) {};
+        -:   19:
+        -:   20:        virtual int getProductionMultiplier() = 0;
+        -:   21:};
+        -:   22:
+        -:   23:#endif

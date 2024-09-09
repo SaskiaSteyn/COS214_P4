@@ -1,0 +1,51 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/FloodedSoil.cpp
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\FloodedSoil.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\FloodedSoil.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "FloodedSoil.h"
+        -:    2:
+        -:    3:
+function _ZN11FloodedSoil7getNameB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:    4:string FloodedSoil::getName() {
+    #####:    5:    return this->name;
+    %%%%%:    5-block  0
+call    0 never executed
+        -:    6:}
+        -:    7:
+function _ZN11FloodedSoil12harvestCropsEiP9CropField called 0 returned 0% blocks executed 0%
+    #####:    8:void FloodedSoil::harvestCrops(int yield, CropField* context) {
+        -:    9:
+    #####:   10:    if(!context->getCropStatus()){
+    %%%%%:   10-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   11:    return;
+    %%%%%:   11-block  0
+        -:   12:    }
+        -:   13:
+    #####:   14:    cout << "Your is has been flooded. You could not grow any crops" << endl;
+    %%%%%:   14-block  0
+call    0 never executed
+call    1 never executed
+        -:   15:
+    #####:   16:    cout << "You have harvested " << yield * productionMultiplier << " crops." << endl;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+        -:   17:}
+        -:   18:
+function _ZN11FloodedSoil4rainEP9CropField called 0 returned 0% blocks executed 0%
+    #####:   19:void FloodedSoil::rain(CropField *context) {
+    #####:   20:    cout << "It has started raining on a flooded crop field" << endl;
+    %%%%%:   20-block  0
+call    0 never executed
+call    1 never executed
+    #####:   21:}
+        -:   22:
+function _ZN11FloodedSoil23getProductionMultiplierEv called 0 returned 0% blocks executed 0%
+    #####:   23:int FloodedSoil::getProductionMultiplier() {
+    #####:   24:    return this->productionMultiplier;
+    %%%%%:   24-block  0
+        -:   25:}

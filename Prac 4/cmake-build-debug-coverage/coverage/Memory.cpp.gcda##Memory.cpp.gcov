@@ -1,0 +1,17 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/Memory.cpp
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\Memory.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\Memory.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Memory.h"
+        -:    2:
+function _ZN6Memory10saveMemoryEP5State called 0 returned 0% blocks executed 0%
+    #####:    3:void Memory::saveMemory(State *farmState) {
+    #####:    4:    this->farmState = farmState;
+    #####:    5:}
+        -:    6:
+function _ZN6Memory13restoreMemoryEv called 0 returned 0% blocks executed 0%
+    #####:    7:State *Memory::restoreMemory() {
+    #####:    8:    return this->farmState;
+    %%%%%:    8-block  0
+        -:    9:}
+        -:   10:

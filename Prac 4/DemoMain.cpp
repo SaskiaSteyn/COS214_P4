@@ -62,24 +62,33 @@ void MenuPrintout(){
             " ..-*#%@@@@@@@@@@@@@@@@@@@@@@@@@+:...  .+%@@@@@@@@@@@@@@#:..  .#@@@@@@@@*.. .+@@@@@@@@. .=@@@@@@@+.  +@@@@@@@@=   ..*\n \033[0m";
 };
 
-void printMap(Iterator *gameMap) {
+void printMap(map<string, Farm*> farms) {
     int farmNo = 0;
+    int index = 0;
+//    Farm *current = nullptr;
+    map<string, Farm*> ::iterator current;
+    string line[3][2];
+    cout << endl;
 
-    for (int i = 0; i < 9; i++) {
+    string topAndEndLine = "------";
 
-        string line[3][2];
-        Farm *current = gameMap->getCurrent();
-        string name = gameMap->getCurrent()->getName();
+    //for (itr = gquiz2.begin(); itr != gquiz2.end(); ++itr)
+    for (current = farms.begin(); current != farms.end(); ++current) {
+
+        if (current->second == nullptr) {
+            return;
+        }
+        string name = current->second->getName();
         string crop = "";
-        if (current->getFarmUnit(0)->getSoilState()->getName() == "DrySoil") {
-            if (current->getFarmUnit(0)->getCropState()->getName() == "Seedling") {
-                crop = "|----|\n|o-o|\n|----|\n|o-o|\n|----|";
+        if (current->second->getFarmUnit(0)->getSoilState()->getName() == "DrySoil") {
+            if (current->second->getFarmUnit(0)->getCropState()->getName() == "Seedling") {
+                crop = "______\n|----|\n|o-o|\n|----|\n|o-o|\n|----|\n______";
             }
-            else if (current->getFarmUnit(0)->getCropState()->getName() == "Growing") {
-                crop = "|----|\n|ø-ø|\n|----|\n|ø-ø|\n|----|";
+            else if (current->second->getFarmUnit(0)->getCropState()->getName() == "Growing") {
+                crop = "______\n|----|\n|ø-ø|\n|----|\n|ø-ø|\n|----|\n______";
             }
             else {
-                crop = "|----|\n|Φ-Φ|\n|----|\n|Φ-Φ|\n|----|";
+                crop = "______\n|----|\n|Φ-Φ|\n|----|\n|Φ-Φ|\n|----|\n______";
             }
         }
 
@@ -87,13 +96,14 @@ void printMap(Iterator *gameMap) {
         line[farmNo][1] = crop;
         farmNo++;
 
-        if ((i + 1) % 3 == 0) {
+
+        if ((index + 1) % 3 == 0) {
             cout << line[0][0] << " " << line[1][0] << " " << line[2][0] << " " << endl;
             cout << line[0][1] << " " << line[1][1] << " " << line[2][1] << " " << endl;
             cout << endl;
             farmNo = 0;
         }
-        current = gameMap->getNext();
+        index++;
     }
 }
 
@@ -123,67 +133,67 @@ int main() {
 
     map<string, Farm*> farms;
 
+//    farms.insert(pair<string, Farm*>("Farm 0", new ConcreteFarm()));
+    farms["Farm 0"] = new ConcreteFarm();
+    farms["Farm 0"]->addFarmUnit(cocaine);
+    farms["Farm 0"]->setName("cocaine");
+    farms["Farm 0"]->getFarmUnit(0)->setSoilState(drySoil);
+    farms["Farm 0"]->getFarmUnit(0)->setCropState(seedling);
 
-    farms["Farm " + 0] = new ConcreteFarm();
-    farms["Farm " + 0]->addFarmUnit(cocaine);
-    farms["Farm " + 0]->setName("cocaine");
-    farms["Farm " + 0]->getFarmUnit(0)->setSoilState(drySoil);
-    farms["Farm " + 0]->getFarmUnit(0)->setCropState(seedling);
+    farms["Farm 1"] = new ConcreteFarm();
+    farms["Farm 1"]->addFarmUnit(heroine);
+    farms["Farm 1"]->setName("heroine");
+    farms["Farm 1"]->getFarmUnit(0)->setSoilState(drySoil);
+    farms["Farm 1"]->getFarmUnit(0)->setCropState(seedling);
 
-    farms["Farm " + 1] = new ConcreteFarm();
-    farms["Farm " + 1]->addFarmUnit(heroine);
-    farms["Farm " + 1]->setName("heroine");
-    farms["Farm " + 1]->getFarmUnit(0)->setSoilState(drySoil);
-    farms["Farm " + 1]->getFarmUnit(0)->setCropState(seedling);
+    farms["Farm 2"] = new ConcreteFarm();
+    farms["Farm 2"]->addFarmUnit(morphine);
+    farms["Farm 2"]->setName("morphine");
+    farms["Farm 2"]->getFarmUnit(0)->setSoilState(drySoil);
+    farms["Farm 2"]->getFarmUnit(0)->setCropState(seedling);
 
-    farms["Farm " + 2] = new ConcreteFarm();
-    farms["Farm " + 2]->addFarmUnit(morphine);
-    farms["Farm " + 2]->setName("morphine");
-    farms["Farm " + 2]->getFarmUnit(0)->setSoilState(drySoil);
-    farms["Farm " + 2]->getFarmUnit(0)->setCropState(seedling);
+    farms["Farm 3"] = new ConcreteFarm();
+    farms["Farm 3"]->addFarmUnit(tobacco);
+    farms["Farm 3"]->setName("tobacco");
+    farms["Farm 3"]->getFarmUnit(0)->setSoilState(drySoil);
+    farms["Farm 3"]->getFarmUnit(0)->setCropState(seedling);
 
-    farms["Farm " + 3] = new ConcreteFarm();
-    farms["Farm " + 3]->addFarmUnit(tobacco);
-    farms["Farm " + 3]->setName("tobacco");
-    farms["Farm " + 3]->getFarmUnit(0)->setSoilState(drySoil);
-    farms["Farm " + 3]->getFarmUnit(0)->setCropState(seedling);
+    farms["Farm 4"] = new ConcreteFarm();
+    farms["Farm 4"]->addFarmUnit(coffee);
+    farms["Farm 4"]->setName("coffee");
+    farms["Farm 4"]->getFarmUnit(0)->setSoilState(drySoil);
+    farms["Farm 4"]->getFarmUnit(0)->setCropState(seedling);
 
-    farms["Farm " + 4] = new ConcreteFarm();
-    farms["Farm " + 4]->addFarmUnit(coffee);
-    farms["Farm " + 4]->setName("coffee");
-    farms["Farm " + 4]->getFarmUnit(0)->setSoilState(drySoil);
-    farms["Farm " + 4]->getFarmUnit(0)->setCropState(seedling);
+    farms["Farm 5"] = new ConcreteFarm();
+    farms["Farm 5"]->addFarmUnit(tea);
+    farms["Farm 5"]->setName("tea");
+    farms["Farm 5"]->getFarmUnit(0)->setSoilState(drySoil);
+    farms["Farm 5"]->getFarmUnit(0)->setCropState(seedling);
 
-    farms["Farm " + 5] = new ConcreteFarm();
-    farms["Farm " + 5]->addFarmUnit(tea);
-    farms["Farm " + 5]->setName("tea");
-    farms["Farm " + 5]->getFarmUnit(0)->setSoilState(drySoil);
-    farms["Farm " + 5]->getFarmUnit(0)->setCropState(seedling);
+    farms["Farm 6"] = new ConcreteFarm();
+    farms["Farm 6"]->addFarmUnit(cotton);
+    farms["Farm 6"]->setName("cotton");
+    farms["Farm 6"]->getFarmUnit(0)->setSoilState(drySoil);
+    farms["Farm 6"]->getFarmUnit(0)->setCropState(seedling);
 
-    farms["Farm " + 6] = new ConcreteFarm();
-    farms["Farm " + 6]->addFarmUnit(cotton);
-    farms["Farm " + 6]->setName("cotton");
-    farms["Farm " + 6]->getFarmUnit(0)->setSoilState(drySoil);
-    farms["Farm " + 6]->getFarmUnit(0)->setCropState(seedling);
+    farms["Farm 7"] = new ConcreteFarm();
+    farms["Farm 7"]->addFarmUnit(weed);
+    farms["Farm 7"]->setName("weed");
+    farms["Farm 7"]->getFarmUnit(0)->setSoilState(drySoil);
+    farms["Farm 7"]->getFarmUnit(0)->setCropState(seedling);
 
-    farms["Farm " + 7] = new ConcreteFarm();
-    farms["Farm " + 7]->addFarmUnit(weed);
-    farms["Farm " + 7]->setName("weed");
-    farms["Farm " + 7]->getFarmUnit(0)->setSoilState(drySoil);
-    farms["Farm " + 7]->getFarmUnit(0)->setCropState(seedling);
-
-    farms["Farm " + 8] = new ConcreteFarm();
-    farms["Farm " + 8]->addFarmUnit(sugar);
-    farms["Farm " + 8]->setName("sugar");
-    farms["Farm " + 8]->getFarmUnit(0)->setSoilState(drySoil);
-    farms["Farm " + 8]->getFarmUnit(0)->setCropState(seedling);
+    farms["Farm 8"] = new ConcreteFarm();
+    farms["Farm 8"]->addFarmUnit(sugar);
+    farms["Farm 8"]->setName("sugar");
+    farms["Farm 8"]->getFarmUnit(0)->setSoilState(drySoil);
+    farms["Farm 8"]->getFarmUnit(0)->setCropState(seedling);
 
 
     Aggregate gameMap;
     Iterator *mapObj = gameMap.createIterator(farms);
 
 
-    printMap(mapObj);
+    printMap(farms);
 
 
     return 0;

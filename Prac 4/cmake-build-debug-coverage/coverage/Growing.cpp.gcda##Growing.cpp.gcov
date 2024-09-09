@@ -1,0 +1,45 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/Growing.cpp
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\Growing.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\Growing.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Growing.h"
+        -:    2:
+function _ZN7Growing7getNameB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:    3:string Growing::getName() {
+    #####:    4:    return this->name;
+    %%%%%:    4-block  0
+call    0 never executed
+        -:    5:}
+        -:    6:
+function _ZN7Growing17isReadyForHarvestEv called 0 returned 0% blocks executed 0%
+    #####:    7:bool Growing:: isReadyForHarvest() {
+    #####:    8:    cout << "You cannot harvest your crops yet, they are still growing!" << endl;
+    %%%%%:    8-block  0
+call    0 never executed
+call    1 never executed
+    #####:    9:    return false;
+        -:   10:
+        -:   11:}
+        -:   12:
+function _ZN7Growing9growCropsEP9CropField called 0 returned 0% blocks executed 0%
+    #####:   13:void Growing::growCrops(CropField *context) {
+    #####:   14:    cout << "Your growing crops are almost ready!" << endl;
+    %%%%%:   14-block  0
+call    0 never executed
+call    1 never executed
+    #####:   15:    context->setCropState(new FullyGrown());
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:   15-block  0
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+    $$$$$:   15-block  1
+branch  7 never executed (fallthrough)
+branch  8 never executed
+    $$$$$:   15-block  2
+call    9 never executed
+    #####:   16:}
+    %%%%%:   16-block  0

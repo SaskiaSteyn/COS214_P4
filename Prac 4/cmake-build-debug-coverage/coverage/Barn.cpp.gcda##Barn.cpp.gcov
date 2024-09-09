@@ -1,0 +1,54 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/Barn.cpp
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\Barn.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\Barn.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Barn.h"
+        -:    2:
+function _ZN4BarnC2Ev called 0 returned 0% blocks executed 0%
+    #####:    3:Barn::Barn() {
+    %%%%%:    3-block  0
+call    0 never executed
+    #####:    4:    this->totalCapacity = 100;
+    #####:    5:    this->currentCapacity = 0;
+    #####:    6:    this->threshold = 50;
+    #####:    7:}
+        -:    8:
+function _ZN4Barn18getCurrentCapacityEv called 0 returned 0% blocks executed 0%
+    #####:    9:int Barn::getCurrentCapacity() {
+    #####:   10:    return this->currentCapacity;
+    %%%%%:   10-block  0
+        -:   11:}
+        -:   12:
+function _ZN4Barn16increaseCapacityEi called 0 returned 0% blocks executed 0%
+    #####:   13:void Barn::increaseCapacity(int amount) {
+    #####:   14:    if (this->currentCapacity + amount <= this->threshold) {
+    %%%%%:   14-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   15:        this->currentCapacity += amount;
+    %%%%%:   15-block  0
+        -:   16:    }
+    #####:   17:}
+        -:   18:
+function _ZN4Barn16decreaseCapacityEi called 0 returned 0% blocks executed 0%
+    #####:   19:void Barn::decreaseCapacity(int amount) {
+    #####:   20:    if (this->currentCapacity - amount >= 0) {
+    %%%%%:   20-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   21:        this->currentCapacity -= amount;
+    %%%%%:   21-block  0
+        -:   22:    }
+        -:   23:
+    #####:   24:}
+        -:   25:
+function _ZN4Barn11setCapacityEi called 0 returned 0% blocks executed 0%
+    #####:   26:void Barn::setCapacity(int amount) {
+    #####:   27:    this->currentCapacity = amount;
+    #####:   28:}
+        -:   29:
+function _ZN4Barn13getThreshholdEv called 0 returned 0% blocks executed 0%
+    #####:   30:int Barn::getThreshhold() {
+    #####:   31:    return this->threshold;
+    %%%%%:   31-block  0
+        -:   32:}

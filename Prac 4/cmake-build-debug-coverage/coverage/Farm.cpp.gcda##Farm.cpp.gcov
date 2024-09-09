@@ -1,0 +1,21 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/Farm.cpp
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\Farm.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\Farm.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:
+        -:    3:#include "Farm.h"
+        -:    4:
+function _ZN4Farm7getNameB5cxx11Ev called 9 returned 100% blocks executed 100%
+        9:    5:string Farm::getName() {
+        9:    6:    return this->name;
+        9:    6-block  0
+call    0 returned 9
+        -:    7:}
+        -:    8:
+function _ZN4Farm7setNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 9 returned 100% blocks executed 100%
+        9:    9:void Farm::setName(string farmName) {
+        9:   10:    this->name = farmName;
+        9:   10-block  0
+call    0 returned 9
+        9:   11:}

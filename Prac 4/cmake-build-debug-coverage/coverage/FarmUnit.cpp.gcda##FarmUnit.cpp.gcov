@@ -1,0 +1,79 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/FarmUnit.cpp
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\FarmUnit.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\FarmUnit.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "FarmUnit.h"
+        -:    2:
+function _ZN8FarmUnitC2Ev called 9 returned 100% blocks executed 100%
+        9:    3:FarmUnit::FarmUnit() {
+        9:    3-block  0
+call    0 returned 9
+        -:    4://    this->farmer = new Farmer(this);
+        -:    5://    farmer->setStateSoil(this->soilState);
+        -:    6://    farmer->setStateCrop(this->cropState);
+        -:    7:
+        9:    8:}
+        -:    9:
+        -:   10://Memento functions
+        -:   11://void FarmUnit::notifyFarmerSoil(State* oldStateSoil) {
+        -:   12://    farmer->setStateSoil(oldStateSoil);
+        -:   13://
+        -:   14://}
+        -:   15://
+        -:   16://void FarmUnit::notifyFarmerCrop(State* oldStateCrop) {
+        -:   17://    farmer->setStateCrop(oldStateCrop);
+        -:   18://
+        -:   19://}
+        -:   20://
+        -:   21://
+        -:   22:////State setting state methods
+        -:   23://void FarmUnit::setStateSoil(State* newSoilState) {
+        -:   24://    notifyFarmerSoil(soilState);
+        -:   25://    this->soilState = newSoilState;
+        -:   26://
+        -:   27://    this->farmer->updateFarmState();
+        -:   28://
+        -:   29://}
+        -:   30:
+        -:   31://void FarmUnit::setStateCrop(State* newCropState) {
+        -:   32://    notifyFarmerCrop(cropState);
+        -:   33://    this->cropState = newCropState;
+        -:   34://
+        -:   35://    this->farmer->updateFarmState();
+        -:   36://
+        -:   37://}
+        -:   38:
+        -:   39:
+        -:   40://Composite methods
+        -:   41:// bool FarmUnit::addFarmUnit(FarmUnit *farm) {
+        -:   42://     this->farms.push_back(farm);
+        -:   43://     return true;
+        -:   44:// }
+        -:   45://
+        -:   46:// bool FarmUnit::removeFarmUnit(FarmUnit *farm) {
+        -:   47://     for (int i = 0; i < this->farms.size(); i++) {
+        -:   48://
+        -:   49://         if (this->farms[i] == farm) {
+        -:   50://
+        -:   51://             this->farms.erase(this->farms.begin() + i);
+        -:   52://             return true;
+        -:   53://
+        -:   54://         }
+        -:   55://
+        -:   56://     }
+        -:   57://
+        -:   58://     return false;
+        -:   59:// }
+        -:   60://
+        -:   61:// FarmUnit *FarmUnit::getFarmUnit(int index) {
+        -:   62://     return this->farms.at(index);
+        -:   63:// }
+        -:   64:
+        -:   65://State *FarmUnit::getSoilState() {
+        -:   66://    return this->soilState;
+        -:   67://}
+        -:   68://
+        -:   69://State *FarmUnit::getCropState() {
+        -:   70://    return this->cropState;
+        -:   71://}
+        -:   72:

@@ -1,0 +1,114 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/Farmer.cpp
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\Farmer.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\Farmer.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#include "Farmer.h"
+        -:    3:
+function _ZN6FarmerC2EP12ConcreteFarm called 0 returned 0% blocks executed 0%
+    #####:    4:Farmer::Farmer(ConcreteFarm *concreteFarm) {
+    #####:    5:    this->concreteFarm = concreteFarm;
+    #####:    6:}
+        -:    7:
+function _ZN6Farmer16createMemorySoilEv called 0 returned 0% blocks executed 0%
+    #####:    8:Memory *Farmer::createMemorySoil() {
+    #####:    9:    Memory* newMemory = new Memory();
+    %%%%%:    9-block  0
+call    0 never executed
+    #####:   10:    newMemory->saveMemory(this->soilState);
+call    0 never executed
+        -:   11:
+    #####:   12:    return newMemory;
+        -:   13:}
+        -:   14:
+function _ZN6Farmer16createMemoryCropEv called 0 returned 0% blocks executed 0%
+    #####:   15:Memory *Farmer::createMemoryCrop() {
+    #####:   16:    Memory* newMemory = new Memory();
+    %%%%%:   16-block  0
+call    0 never executed
+    #####:   17:    newMemory->saveMemory(this->cropState);
+call    0 never executed
+        -:   18:
+    #####:   19:    return newMemory;
+        -:   20:}
+        -:   21:
+function _ZN6Farmer12setStateSoilEP9SoilState called 0 returned 0% blocks executed 0%
+    #####:   22:void Farmer::setStateSoil(SoilState *oldSoilState) {
+    #####:   23:    this->soilState = oldSoilState;
+        -:   24:
+    #####:   25:}
+        -:   26:
+function _ZN6Farmer12setStateCropEP9CropState called 0 returned 0% blocks executed 0%
+    #####:   27:void Farmer::setStateCrop(CropState *oldCropState) {
+    #####:   28:    this->cropState = oldCropState;
+        -:   29:
+    #####:   30:}
+        -:   31:
+function _ZN6Farmer15updateFarmStateEv called 0 returned 0% blocks executed 0%
+    #####:   32:void Farmer::updateFarmState() {
+    #####:   33:    createMemoryCrop();
+    %%%%%:   33-block  0
+call    0 never executed
+    #####:   34:    createMemorySoil();
+call    0 never executed
+        -:   35:
+    #####:   36:    setStateSoil(this->concreteFarm->getSoilState());
+call    0 never executed
+call    1 never executed
+    #####:   37:    setStateCrop(this->concreteFarm->getCropState());
+call    0 never executed
+call    1 never executed
+        -:   38://    this->soilState = this->farm->getFarmUnit(0)->getSoilState();
+        -:   39://    this->cropState = this->farm->getFarmUnit(0)->getCropState();
+        -:   40:
+    #####:   41:    if (this->cropState->getName() == "FullyGrown") {
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   41-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   42:        this->concreteFarm->harvest();
+    %%%%%:   42-block  0
+call    0 never executed
+        -:   43:    }
+    #####:   44:}
+    %%%%%:   44-block  0
+        -:   45:
+function _ZN6Farmer16increaseCapacityEi called 0 returned 0% blocks executed 0%
+    #####:   46:void Farmer::increaseCapacity(int amount) {
+    #####:   47:    if (this->concreteFarm->getFarmUnit(1)->getCurrentCapacity() + amount >= this->concreteFarm->getFarmUnit(1)->getThreshhold()) {
+    %%%%%:   47-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    #####:   48:        if (this->concreteFarm->getTruckName() != "Delivery") {
+    %%%%%:   48-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   48-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed
+    #####:   49:            cout << "This farm does not own a delivery truck. Cannot store this harvest" << endl;
+    %%%%%:   49-block  0
+call    0 never executed
+call    1 never executed
+    #####:   50:            return;
+        -:   51:        }
+        -:   52:
+    #####:   53:        this->concreteFarm->getFarmUnit(1)->increaseCapacity(amount);
+    %%%%%:   53-block  0
+call    0 never executed
+call    1 never executed
+    #####:   54:        this->concreteFarm->startEngine();
+call    0 never executed
+        -:   55:    }
+        -:   56:}

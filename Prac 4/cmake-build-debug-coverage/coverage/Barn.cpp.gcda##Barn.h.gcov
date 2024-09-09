@@ -1,0 +1,35 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/Barn.h
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\Barn.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\Barn.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef BARN_H
+        -:    2:#define BARN_H
+        -:    3:
+        -:    4:#include "FarmUnit.h"
+        -:    5:class DeliveryTruck;
+        -:    6:
+        -:    7:class Barn : public FarmUnit {
+        -:    8:    private:
+        -:    9:        int totalCapacity;
+        -:   10:        int currentCapacity;
+        -:   11:        int threshold;
+        -:   12:    public:
+        -:   13:        friend class DeliveryTruck;
+        -:   14:        Barn();
+        -:   15:        int getCurrentCapacity();
+        -:   16:        void increaseCapacity(int amount);
+        -:   17:        void decreaseCapacity(int amount);
+        -:   18:        void setCapacity(int amount);
+        -:   19:        int getThreshhold();
+        -:   20:
+        -:   21:    void setSoilState(State* soilState) {};
+        -:   22:    void setCropState(State* cropState) {};
+function _ZN4Barn12getSoilStateEv called 0 returned 0% blocks executed 0%
+    #####:   23:    SoilState* getSoilState() {return nullptr;};
+    %%%%%:   23-block  0
+function _ZN4Barn12getCropStateEv called 0 returned 0% blocks executed 0%
+    #####:   24:    CropState* getCropState() {return nullptr;};
+    %%%%%:   24-block  0
+        -:   25:};
+        -:   26:
+        -:   27:#endif

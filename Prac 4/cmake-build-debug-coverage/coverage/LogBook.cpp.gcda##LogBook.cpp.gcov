@@ -1,0 +1,26 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/LogBook.cpp
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\LogBook.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\LogBook.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "LogBook.h"
+        -:    2:
+function _ZN7LogBook11getMemoriesEi called 0 returned 0% blocks executed 0%
+    #####:    3:Memory *LogBook::getMemories(int index) {
+    #####:    4:    return this->logbook.at(index);
+    %%%%%:    4-block  0
+call    0 never executed
+        -:    5:}
+        -:    6:
+function _ZN7LogBook9setMemoryEiP6Memory called 0 returned 0% blocks executed 0%
+    #####:    7:void LogBook::setMemory(int index, Memory *memories) {
+    #####:    8:    this->logbook[index] = memories;
+    %%%%%:    8-block  0
+call    0 never executed
+    #####:    9:}
+        -:   10:
+function _ZN7LogBook11addMemoriesEP6Memory called 0 returned 0% blocks executed 0%
+    #####:   11:void LogBook::addMemories(Memory *memory) {
+    #####:   12:    this->logbook.push_back(memory);
+    %%%%%:   12-block  0
+call    0 never executed
+    #####:   13:}

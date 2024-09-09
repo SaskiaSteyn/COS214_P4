@@ -13,6 +13,7 @@ private:
     map<string, Farm*> farms;
     Farm * current;
 public:
+//    Iterator(map<string, Farm*> farms);
     Iterator(map<string, Farm*> farms);
     Farm * getFarm(string farmName);
     Farm * getCurrent();

@@ -1,0 +1,57 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/CropField.cpp
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\CropField.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\CropField.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#include "CropField.h"
+        -:    3:
+function _ZN9CropField10summonRainEv called 0 returned 0% blocks executed 0%
+    #####:    4:void CropField::summonRain() {
+    #####:    5:    this->soilState->rain(this);
+    %%%%%:    5-block  0
+call    0 never executed
+    #####:    6:}
+        -:    7:
+function _ZN9CropField12setSoilStateEP9SoilState called 9 returned 100% blocks executed 67%
+        9:    8:void CropField::setSoilState(SoilState *soilState) {
+       9*:    9:    delete this->soilState;
+        9:    9-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 9
+    %%%%%:    9-block  1
+call    2 never executed
+        9:   10:    this->soilState = soilState;
+        -:   11:
+        9:   12:}
+        -:   13:
+function _ZN9CropField12setCropStateEP9CropState called 9 returned 100% blocks executed 67%
+        9:   14:void CropField::setCropState(CropState *cropState) {
+       9*:   15:    delete this->cropState;
+        9:   15-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 9
+    %%%%%:   15-block  1
+call    2 never executed
+        9:   16:    this->cropState = cropState;
+        -:   17:
+        9:   18:}
+        -:   19:
+function _ZN9CropField12getSoilStateEv called 9 returned 100% blocks executed 100%
+        9:   20:SoilState * CropField::getSoilState() {
+        9:   21:    return soilState;
+        9:   21-block  0
+        -:   22:}
+        -:   23:
+function _ZN9CropField12getCropStateEv called 9 returned 100% blocks executed 100%
+        9:   24:CropState * CropField::getCropState() {
+        9:   25:    return cropState;
+        9:   25-block  0
+        -:   26:}
+        -:   27:
+function _ZN9CropField13getCropStatusEv called 0 returned 0% blocks executed 0%
+    #####:   28:bool CropField::getCropStatus() {
+    #####:   29:    return this->cropState->isReadyForHarvest();
+    %%%%%:   29-block  0
+call    0 never executed
+        -:   30:}
+        -:   31:

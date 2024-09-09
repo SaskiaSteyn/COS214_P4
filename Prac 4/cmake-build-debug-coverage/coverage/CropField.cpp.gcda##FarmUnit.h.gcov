@@ -1,0 +1,55 @@
+        -:    0:Source:C:/Users/njjvr/OneDrive/Documents/COS214/Prac 4/COS214_P4/Prac 4/FarmUnit.h
+        -:    0:Graph:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\CropField.cpp.gcno
+        -:    0:Data:C:\Users\njjvr\OneDrive\Documents\COS214\Prac 4\COS214_P4\Prac 4\cmake-build-debug-coverage\CMakeFiles\Prac_4.dir\CropField.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef FARMUNIT_H
+        -:    2:#define FARMUNIT_H
+        -:    3:
+        -:    4:#include "Farm.h"
+        -:    5:#include "State.h"
+        -:    6:#include "SoilState.h"
+        -:    7:#include "CropState.h"
+        -:    8://#include "Truck.h"
+        -:    9:
+        -:   10:class Truck;
+        -:   11:class Farmer;
+        -:   12:
+        -:   13:#include <vector>
+        -:   14:
+        -:   15:
+        -:   16:class FarmUnit : public Farm {
+        -:   17:    private:
+        -:   18:    //memento: these states get sent to farmer
+        -:   19:        SoilState* soilState;
+        -:   20:        CropState* cropState;
+        -:   21:
+        -:   22:    public:
+        -:   23:        FarmUnit();
+        -:   24:
+        -:   25:        //State method
+        -:   26:        virtual void setSoilState(SoilState* newSoilState) = 0;
+        -:   27:        virtual void setCropState(CropState* newCropState) = 0;
+        -:   28:
+        -:   29:        //Composite methods
+function _ZN8FarmUnit11addFarmUnitEPS_ called 0 returned 0% blocks executed 0%
+    #####:   30:        bool addFarmUnit(FarmUnit* farm) {return false;};
+    %%%%%:   30-block  0
+function _ZN8FarmUnit14removeFarmUnitEPS_ called 0 returned 0% blocks executed 0%
+    #####:   31:        bool removeFarmUnit(FarmUnit* farm) {return false;};
+    %%%%%:   31-block  0
+function _ZN8FarmUnit11getFarmUnitEi called 0 returned 0% blocks executed 0%
+    #####:   32:        FarmUnit* getFarmUnit(int index) {return nullptr;};
+    %%%%%:   32-block  0
+        -:   33:
+        -:   34:        //observer methods
+        -:   35:        virtual SoilState* getSoilState() = 0;
+        -:   36:        virtual CropState* getCropState() = 0;
+        -:   37:
+        -:   38:        virtual int getCurrentCapacity() = 0;
+        -:   39:        virtual void increaseCapacity(int amount) = 0;
+        -:   40:        virtual void decreaseCapacity(int amount) = 0;
+        -:   41:        virtual void setCapacity(int amount) = 0;
+        -:   42:        virtual int getThreshhold() = 0;
+        -:   43:};
+        -:   44:
+        -:   45:#endif
